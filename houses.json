@@ -11,7 +11,7 @@
     "bathroom" : 23,
     "accessible" : true,
     "elevator" : false,
-  }
+  },
   {
     "name" : "Hubbard",
     "area" : "Green Street" ,
@@ -24,7 +24,7 @@
     "bathroom" : 18,
     "accessible" : true,
     "elevator" : false,
-  }
+  },
   {
     "name" : "Lawrence",
     "area" : "Green Street" ,
@@ -37,7 +37,7 @@
     "bathroom" : 23,
     "accessible" : true,
     "elevator" : false,
-  }
+  },
   {
     "name" : "Morris",
     "area" : "Green Street" ,
@@ -50,7 +50,7 @@
     "bathroom" : 23,
     "accessible" : true,
     "elevator" : false,
-  }
+  },
   {
     "name" : "Lawrence",
     "area" : "Green Street" ,
@@ -63,7 +63,7 @@
     "bathroom" : 23,
     "accessible" : true,
     "elevator" : false,
-  }
+  },
   {
     "name" : "Parsons",
     "area" : "Green Street" ,
@@ -76,7 +76,7 @@
     "bathroom" : 18,
     "accessible" : true,
     "elevator" : false,
-  }
+  },
   {
     "name" : "Tyler",
     "area" : "Green Street" ,
@@ -89,7 +89,7 @@
     "bathroom" : 23,
     "accessible" : true,
     "elevator" : false,
-  }
+  },
   {
     "name" : "Washburn",
     "area" : "Green Street" ,
@@ -102,7 +102,7 @@
     "bathroom" : 17,
     "accessible" : true,
     "elevator" : false,
-  }
+  },
   {
     "name" : "Cutter",
     "area" : "Center Campus" ,
@@ -115,7 +115,7 @@
     "bathroom" : 40,
     "accessible" : true,
     "elevator" : true,
-  }
+  },
   {
     "name" : "Haven-Wesley",
     "area" : "Center Campus" ,
@@ -128,7 +128,7 @@
     "bathroom" : 23,
     "accessible" : true,
     "elevator" : false,
-  }
+  },
   {
     "name" : "Hopkins",
     "area" : "Center Campus" ,
@@ -141,7 +141,7 @@
     "bathroom" : 13,
     "accessible" : true,
     "elevator" : false,
-  }
+  },
   {
     "name" : "Park Complex",
     "area" : "Center Campus" ,
@@ -154,7 +154,7 @@
     "bathroom" : 21,
     "accessible" : false,
     "elevator" : false,
-  }
+  },
   {
     "name" : "Sessions Complex",
     "area" : "Center Campus" ,
@@ -167,7 +167,7 @@
     "bathroom" : 18,
     "accessible" : true,
     "elevator" : false,
-  }
+  },
   {
     "name" : "Tenney",
     "area" : "Center Campus" ,
@@ -180,7 +180,7 @@
     "bathroom" : 7,
     "accessible" : true,
     "elevator" : false,
-  }
+  },
   {
     "name" : "Ziskind",
     "area" : "Center Campus" ,
@@ -193,7 +193,7 @@
     "bathroom" : 40,
     "accessible" : true,
     "elevator" : true,
-  }
+  },
   { "name": "44 Green St",
     "area": "Lower Elm",
     "built": 1950,
@@ -205,8 +205,7 @@
     "bathroom": 5,
     "accessible": false,
     "elevator": false,
-  }
-
+  },
   { "name": "54 Green St",
     "area": "Lower Elm",
     "built": 1950,
@@ -218,7 +217,7 @@
     "bathroom": 5,
     "accessible": false,
     "elevator": false,
-  }
+  },
   { "name": "Albright",
     "area": "Lower Elm",
     "built": 1900,
@@ -230,7 +229,7 @@
     "bathroom": 21,
     "accessible": false,
     "elevator": false,
-  }
+  },
   { "name": "Baldwin",
     "area": "Lower Elm",
     "built": 1908,
@@ -242,8 +241,7 @@
     "bathroom": 18,
     "accessible": true,
     "elevator": false,
-  }
-
+  },
   { "name": "Chase",
     "area": "Lower Elm",
     "built": 1810,
@@ -255,7 +253,7 @@
     "bathroom": 27,
     "accessible": true,
     "elevator": true,
-  }
+  },
   { "name": "Duckett",
     "area": "Lower Elm",
     "built": 1810,
@@ -267,7 +265,7 @@
     "bathroom": 15,
     "accessible": true,
     "elevator": true,
-  }
+  },
   { "name": "Capen",
     "area": "Upper Elm",
     "built": 1825,
@@ -279,7 +277,7 @@
     "bathroom": 24,
     "accessible": true,
     "elevator": false,
-  }
+  },
   { "name": "Gillett",
     "area": "Upper Elm",
     "built": 1910,
@@ -291,7 +289,7 @@
     "bathroom": 24,
     "accessible": true,
     "elevator": false,
-  }
+  },
   { "name": "Lamont",
     "area": "Upper Elm",
     "built": 1955,
@@ -303,7 +301,7 @@
     "bathroom": 25,
     "accessible": true,
     "elevator": true,
-  }
+  },
   { "name": "Northrup",
     "area": "Upper Elm",
     "built": 1910,
@@ -315,7 +313,7 @@
     "bathroom": 22,
     "accessible": true,
     "elevator": true,
-  }
+  },
   { "name": "Talbot",
     "area": "Upper Elm",
     "built": 1909,
@@ -327,5 +325,70 @@
     "bathroom": 26,
     "accessible": false,
     "elevator": false,
+  },
+  {
+    "name" : "Comstock",
+    "area" : "West Quad",
+    "built" : "1930",
+    "renovated" : "2000",
+    "capacity" : "81",
+    "singles" : "58",
+    "doubles" : "10",
+    "triples" : "1",
+    "bathroom" : "30",
+    "accesible" : true,
+    "elevator" : true
+  },
+  {
+    "name" : "Wilder",
+    "area" : "West Quad",
+    "built" : "1930",
+    "renovated" : "2000",
+    "capacity" : "82",
+    "singles" : "57",
+    "doubles" : "11",
+    "triples" : "1",
+    "bathroom" : "30",
+    "accesible" : true,
+    "elevator" : true
+  },
+  {
+    "name" : "Gardiner",
+    "area" : "West Quad",
+    "built" : "1926",
+    "renovated" : "1999",
+    "capacity" : "83",
+    "singles" : "56",
+    "doubles" : "12",
+    "triples" : "1",
+    "bathroom" : "25",
+    "accesible" : true,
+    "elevator" : false,
+  },
+  {
+    "name" : "Morrow",
+    "area" : "West Quad",
+    "built" : "1926",
+    "renovated" : "1999",
+    "capacity" : "83",
+    "singles" : "56",
+    "doubles" : "12",
+    "triples" : "1",
+    "bathroom" : "25",
+    "accesible" : true,
+    "elevator" : false
+  },
+  {
+    "name" : "Wilson",
+    "area" : "West Quad",
+    "built" : "1926",
+    "renovated" : "1994",
+    "capacity" : "102",
+    "singles" : "78",
+    "doubles" : "12",
+    "triples" : "0",
+    "bathroom" : "24",
+    "accesible" : true,
+    "elevator" : false
   }
 ]
