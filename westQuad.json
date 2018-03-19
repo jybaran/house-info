@@ -1,0 +1,68 @@
+[
+  {
+    "name" : "Comstock",
+    "area" : "West Quad",
+    "built" : "1930",
+    "renovated" : "2000",
+    "capacity" : "81",
+    "singles" : "58",
+    "doubles" : "10",
+    "triples" : "1",
+    "bathroom" : "30",
+    "accesible" : true,
+    "elevator" : true
+  },
+  {
+    "name" : "Wilder",
+    "area" : "West Quad",
+    "built" : "1930",
+    "renovated" : "2000",
+    "capacity" : "82",
+    "singles" : "57",
+    "doubles" : "11",
+    "triples" : "1",
+    "bathroom" : "30",
+    "accesible" : true,
+    "elevator" : true
+  },
+  {
+    "name" : "Gardiner",
+    "area" : "West Quad",
+    "built" : "1926",
+    "renovated" : "1999",
+    "capacity" : "83",
+    "singles" : "56",
+    "doubles" : "12",
+    "triples" : "1",
+    "bathroom" : "25",
+    "accesible" : true,
+    "elevator" : false,
+  },
+  {
+    "name" : "Morrow",
+    "area" : "West Quad",
+    "built" : "1926",
+    "renovated" : "1999",
+    "capacity" : "83",
+    "singles" : "56",
+    "doubles" : "12",
+    "triples" : "1",
+    "bathroom" : "25",
+    "accesible" : true,
+    "elevator" : false
+  },
+  {
+    "name" : "Wilson",
+    "area" : "West Quad",
+    "built" : "1926",
+    "renovated" : "1994",
+    "capacity" : "102",
+    "singles" : "78",
+    "doubles" : "12",
+    "triples" : "0",
+    "bathroom" : "24",
+    "accesible" : true,
+    "elevator" : false
+  },
+  
+]
