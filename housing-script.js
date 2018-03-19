@@ -1,5 +1,6 @@
 // Create variable to store houses database
 let houses;
+
 // Use fetch to retrieve database. Report any errors that occur in the fetch operation
 // Once the houses have been successfully loaded and formatted as a JSON object
 // using response.json(), run the initialize() function
