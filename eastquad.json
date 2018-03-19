@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Cushing",
+    "year built": 1922,
+    "year renovated": 1995,
+    "total capacity": 79,
+    "singles": 58,
+    "doubles": 9,
+    "triples": 1,
+    "number sharing bathroom": 23,
+    "accessible": true,
+    "elevator": false
+  },
+  {
+    "name": "Emerson",
+    "year built": 1922,
+    "year renovated": 1995,
+    "total capacity": 87,
+    "singles": 61,
+    "doubles": 13,
+    "triples": 0,
+    "number sharing bathroom": 17,
+    "accessible": true,
+    "elevator": false
+  },
+  {
+    "name": "Jordan",
+    "year built": 1922,
+    "year renovated": 1995,
+    "total capacity": 84,
+    "singles": 53,
+    "doubles": 14,
+    "triples": 1,
+    "number sharing bathroom": 27,
+    "accessible": true,
+    "elevator": false
+  },
+  {
+    "name": "King",
+    "year built": 1936,
+    "year renovated": 2001,
+    "total capacity": 78,
+    "singles": 73,
+    "doubles": 1,
+    "triples": 1,
+    "number sharing bathroom": 25,
+    "accessible": true,
+    "elevator": true
+  },
+  {
+    "name": "Scales",
+    "year built": 1936,
+    "year renovated": 2001,
+    "total capacity": 74,
+    "singles": 74,
+    "doubles": 0,
+    "triples": 0,
+    "number sharing bathroom": 25,
+    "accessible": true,
+    "elevator": true
+  }
+]
