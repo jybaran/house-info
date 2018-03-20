@@ -164,7 +164,7 @@ function initialize() {
                                              // that points to an object stored inside the browser
                                              objectURL = URL.createObjectURL(blob);
                                              // invoke showHouse
-                                             document.getElementById("displayHouses").innerHTML = showHouse(objectURL, house);
+                                             showHouse(objectURL, house);
                                              });
                         } else {
                         console.log('Network request for "' + house.name + '" image failed with response ' + response.status + ': ' + response.statusText);
