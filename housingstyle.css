@@ -42,19 +42,33 @@ label {
     margin-bottom: 10px;
 }
 
+table {
 
-#categories {
+}
+
+.whole {
+    max-height: 200px;
+}
+
+/*
+td {
+    display: flex;
+}
+*/
+
+.categories {
     padding: 10px;
-    /*background-color: #d6d8db;*/
     background-color: #90a8cc;
     width: 180px;
 }
 
-#display {
+.display {
     width: 1000px;
     padding-left: 100px;
+    /*overflow-y: scroll;*/
+    max-height: 150px;
 }
 
-#navbarsize {
-    width: 180px;
+#scroll {
+    overflow: scroll;
 }

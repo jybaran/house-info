@@ -16,10 +16,10 @@
                 <form>
                     <div>
                         <!-- checkboxes for area of campus -->
-                        <table>
+                        <table class="whole">
                             <td valign="top">
                                 <div id="navbarsize">
-                                <table id="categories">
+                                <table class="categories">
                                     <tr><td><label for="area">AREA OF CAMPUS</label></td></tr>
                                     <tr><td><input type = "checkbox" name = "Area" value = "Green Street"checked> Green Street</td></tr>
                                     <tr><td><input type = "checkbox" name = "Area" value = "Upper Elm"checked> Upper Elm</td></tr>
@@ -28,26 +28,37 @@
                                     <tr><td><input type = "checkbox" name = "Area" value = "East Quad" checked> East Quad</td></tr>
                                     <tr><td><input type = "checkbox" name = "Area" value = "West Quad" checked> West Quad</td></tr>
                                 </table>
-                                <table id="categories">
+                                <br/>
+                                <table class="categories">
                                     <tr><td><label for="built">YEAR BUILT</label></td></tr>
-                                    <tr><td><input type = "checkbox" name = "Built" value = "1700-1800" checked> 1700-1800</td></tr>
-                                    <tr><td><input type = "checkbox" name = "Built" value = "1801-1900" checked> 1801-1900</td></tr>
-                                    <tr><td><input type = "checkbox" name = "Built" value = "1901-2000" checked> 1901-2000</td></tr>
-                                    <tr><td><input type = "checkbox" name = "Built" value = "2001-2020" checked> 2001-2020</td></tr>
+                                    <tr><td>
+                                        <select>
+                                            <option value="1700-1800">1700 - 1800</option>
+                                            <option value="1801-1900">1801 - 1900</option>
+                                            <option value="1901-2000">1901 - 2000</option>
+                                            <option value="2001-2020">2001 - 2020</option>
+                                        </select>
+                                    </td></tr>
                                 </table>
                                 <br/>
-                                <table id="categories">
-                                    <tr><td><label for="capacity">CAPACITY</label></td></tr>
-                                    <tr><td><input type = "checkbox" name = "Cap" value = "20-30" checked> 20-30</td></tr>
-                                    <tr><td><input type = "checkbox" name = "Cap" value = "31-50" checked> 31-50</td></tr>
-                                    <tr><td><input type = "checkbox" name = "Cap" value = "51-70" checked> 51-70</td></tr>
-                                    <tr><td><input type = "checkbox" name = "Cap" value = "71-105" checked> 71-100</td></tr>
+                                <table class="categories">
+                                    <tr><td><label for="built">ACCESSIBILITY</label></td></tr>
+                                    <tr><td>
+                                        <select>
+                                            <option value="1700-1800">Accessible</option>
+                                            <option value="1801-1900">Non-accessible</option>
+                                        </select>
+                                    </td></tr>
                                 </table>
                                 <br/>
                                 <button>Submit</button>
                                 </div>
                             </td>
-                            <td id="display" align="left"><main></main></td>
+                            <td class="display">
+                                <div id="scroll">
+                                    <main></main>
+                                </div>
+                            </td>
                         </table>
                     </div>
                     <br/>
