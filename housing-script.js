@@ -178,8 +178,17 @@ function initialize() {
         // create <section>, <h2>, <p>, and <img> elements
         let section = document.createElement('section');
         let heading = document.createElement('h2');
-        let para = document.createElement('p');
+        let subhead = document.createElement('h3');
         let image = document.createElement('img');
+        let built = document.createElement('p');
+        let reno = document.createElement('p');
+        let capacity = document.createElement('p');
+        let singles = document.createElement('p');
+        let doubles = document.createElement('p');
+        let triples = document.createElement('p');
+        let bathroom = document.createElement('p');
+        let access = document.createElement('p');
+        let elevator = document.createElement('p');
         
         // JENNY: think we don't need this
         // give the <section> a classname equal to the house "type" property so it will display the correct icon
@@ -189,20 +198,39 @@ function initialize() {
         // replaced with the uppercase version of the first character
         heading.textContent = house.name.replace(house.name.charAt(0), house.name.charAt(0).toUpperCase());
         
-        // JENNY: think we don't need this
-        // Give the <p> textContent equal to the house "area" property, but with the first character
+        // Give the <h3> textContent equal to the house "area" property, but with the first character
         // replaced with the uppercase version of the first character
-        para.textContent = house.area.replace(house.area.charAt(0), house.area.charAt(0).toUpperCase());
+        subhead.textContent = house.area.replace(house.area.charAt(0), house.area.charAt(0).toUpperCase());
         
         // Set the src of the <img> element to the ObjectURL, and the alt to the house "name" property
         image.src = objectURL;
         image.alt = house.name;
         image.width = "367";
         
+        // Give the <p>s textContent equal to the other house info
+        built.textContent = "Built: " + house.built;
+        reno.textContent = "Renovated: " + house.renovated;
+        capacity.textContent = "Capacity: " + house.capacity;
+        singles.textContent = "Singles: " + house.singles;
+        doubles.textContent = "Doubles: " + house.doubles;
+        triples.textContent = "Triples: " + house.triples;
+        bathroom.textContent = "Number sharing a bathroom: " + house.bathroom;
+        access.textContent = "Accessible: " + house.accessible;
+        elevator.textContent = "Elevator: " + house.elevator;
+        
         // append the elements to the DOM as appropriate, to add the house to the UI
         main.appendChild(section);
         section.appendChild(heading);
-        section.appendChild(para);
+        section.appendChild(subhead);
         section.appendChild(image);
+        section.appendChild(built);
+        section.appendChild(reno);
+        section.appendChild(capacity);
+        section.appendChild(singles);
+        section.appendChild(doubles);
+        section.appendChild(triples);
+        section.appendChild(bathroom);
+        section.appendChild(access);
+        section.appendChild(elevator);
     }
 }
