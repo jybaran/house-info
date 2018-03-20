@@ -21,7 +21,7 @@ function initialize() {
     // grab the UI elements that we need to manipulate
     // var category = document.querySelector('#category');
     // var searchTerm = document.querySelector('#searchTerm');
-    // var searchBtn = document.querySelector('button');
+    var searchBtn = document.querySelector('button');
     let main = document.querySelector('main');
 
     
@@ -48,53 +48,55 @@ function initialize() {
     
     // when the search button is clicked, invoke selectCategory() to start
     // a search running to select the category of houses we want to display
-    //searchBtn.onclick = selectCategory;
+    searchBtn.onclick = selectCategory;
     
-    // function selectCategory(e) {
-        // console.log("got to select category");
+    
+    // JENNY: lots of this is bad
+    function selectCategory(e) {
+        console.log("got to select category");
         // Use preventDefault() to stop the form submitting — that would ruin
         // the experience
-        // e.preventDefault();
+        e.preventDefault();
         
         // Set these back to empty arrays, to clear out the previous search
-        //categoryGroup = [];
-        // finalGroup = [];
+        categoryGroup = [];
+        finalGroup = [];
         
         // if the category and search term are the same as they were the last time a
         // search was run, the results will be the same, so there is no point running
         // it again — just return out of the function
-        // if(category.value === lastCategory && searchTerm.value === lastSearch) {
-            // return;
-        // } else {
+        if(category.value === lastCategory && searchTerm.value === lastSearch) {
+            return;
+        } else {
             // update the record of last category and search term
-            // lastCategory = category.value;
-            // lastSearch = searchTerm.value;
+            lastCategory = category.value;
+            lastSearch = searchTerm.value;
             // In this case we want to select all houses, then filter them by the search
             // term, so we just set categoryGroup to the entire JSON object, then run selectHouses()
-            // if(category.value === 'All') {
-                // categoryGroup = houses;
-                // selectHouses();
+            if(category.value === 'All') {
+                categoryGroup = houses;
+                selectHouses();
                 // If a specific category is chosen, we need to filter out the houses not in that
                 // category, then put the remaining houses inside categoryGroup, before running
                 // selectHouses()
-            // } else {
+            } else {
                 // the values in the <option> elements are uppercase, whereas the categories
                 // store in the JSON (under "type") are lowercase. We therefore need to convert
                 // to lower case before we do a comparison
-                // let lowerCaseType = category.value.toLowerCase();
-                // for(let i = 0; i < houses.length ; i++) {
+                let lowerCaseType = category.value.toLowerCase();
+                for(let i = 0; i < houses.length ; i++) {
                     // If a houses type property is the same as the chosen category, we want to
                     // dispay it, so we push it onto the categoryGroup array
-                    // if(houses[i].type === lowerCaseType) {
-                        // categoryGroup.push(houses[i]);
-                    // }
-                // }
+                    if(houses[i].type === lowerCaseType) {
+                        categoryGroup.push(houses[i]);
+                    }
+                }
                 
                 // Run selectHouses() after the filtering has bene done
-                // selectHouses();
-            // }
-        // }
-    // }
+                selectHouses();
+            }
+        }
+    }
     
     // JENNY: this needs a lot of fixing, sorry
     // selectHouses() Takes the group of houses selected by selectCategory(), and further
