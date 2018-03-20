@@ -8,18 +8,18 @@ fetch('houses.json').then(function(response){
                           if(response.ok){
                           response.json().then(function(json){
                                                houses = json;
-                                               
+
                                                houses.sort( function( a, b ) {
                                                            a = a.name.toLowerCase();
                                                            b = b.name.toLowerCase();
-                                                           
+
                                                            return a < b ? -1 : a > b ? 1 : 0;
                                                            });
                                                houses.sort();
-                                               
+
                                                initialize();
                                                });
-                          
+
                           } else {
                           console.log('Network request for houses.json failed with response ' + response.status + ': ' + response.statusText);
                           }
@@ -102,7 +102,7 @@ function initialize() {
             lastAreaTarget = areaTarget;
             lastCapTarget = capTarget;
             lastBuiltTarget = builtTarget;
-            
+
             // In this case we want to select all houses, then filter them further,
             // so we just set areaGroup to the entire JSON object, then run selectHouses()
             if(areaTarget.length == 6) {
@@ -158,6 +158,7 @@ function initialize() {
             updateDisplay();
         }
 
+
     }
 
 
@@ -206,25 +207,6 @@ function initialize() {
                         }
                         });
     }
-
-    // tests if a checkbox is checked
-    function testCheckbox(checkbox) {
-    //  let checkbox_val = checkbox.value;
-      if (checkbox.checked == true) {
-        console.log("Checkbox " + checkbox.value + " is checked!")
-      } else {
-        console.log("checkbox " + checkbox.value + " is not checked")
-      }
-    }
-    // this function gets the value from a checked box
-    function getCheckval(checkbox) {
-      //let checkbox_area = checkbox.name;
-      if (testCheckbox(checkbox)) {
-        console.log(checkbox.value + " " + checkbox.name)
-      }
-    }
-
-
 
     // Display a house inside the <main> element
     function showHouse(objectURL, house) {
