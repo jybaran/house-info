@@ -21,7 +21,7 @@ function initialize() {
     // grab the UI elements that we need to manipulate
     // var category = document.querySelector('#category');
     // var searchTerm = document.querySelector('#searchTerm');
-    var searchBtn = document.querySelector('button');
+    let searchBtn = document.querySelector('button');
     let main = document.querySelector('main');
 
     
