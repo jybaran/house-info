@@ -49,7 +49,7 @@ function initialize() {
     // when the search button is clicked, invoke selectCategory() to start
     // a search running to select the category of houses we want to display
     searchBtn.onclick = selectCategory;
-    
+
 
     // JENNY: lots of this is bad
     function selectCategory(e) {
@@ -173,6 +173,25 @@ function initialize() {
                         }
                         });
     }
+
+    // tests if a checkbox is checked
+    function testCheckbox(checkbox) {
+    //  let checkbox_val = checkbox.value;
+      if (checkbox.checked == true) {
+        console.log("Checkbox " + checkbox.value + " is checked!")
+      } else {
+        console.log("checkbox " + checkbox.value + " is not checked")
+      }
+    }
+    // this function gets the value from a checked box
+    function getCheckval(checkbox) {
+      //let checkbox_area = checkbox.name;
+      if (testCheckbox(checkbox)) {
+        console.log(checkbox.value + " " + checkbox.name)
+      }
+    }
+
+
 
     // Display a house inside the <main> element
     function showHouse(objectURL, house) {
