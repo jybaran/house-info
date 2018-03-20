@@ -8,12 +8,24 @@ fetch('houses.json').then(function(response){
                           if(response.ok){
                           response.json().then(function(json){
                                                houses = json;
+                                               
+                                               houses.sort( function( a, b ) {
+                                                           a = a.name.toLowerCase();
+                                                           b = b.name.toLowerCase();
+                                                           
+                                                           return a < b ? -1 : a > b ? 1 : 0;
+                                                           });
+                                               houses.sort();
+                                               
                                                initialize();
                                                });
+                          
                           } else {
                           console.log('Network request for houses.json failed with response ' + response.status + ': ' + response.statusText);
                           }
                           });
+
+
 
 // Sets up the logic, declares necessary variables, contains functions
 function initialize() {
