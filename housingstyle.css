@@ -1,0 +1,58 @@
+/* Font for less important titles */
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Serif");
+@import url('https://fonts.googleapis.com/css?family=Overlock+SC');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Karla');
+
+header {
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    height: 250px;
+    width: 1100px;
+    padding: 20px;
+    background-image: url("https://www.mycoalition.org/public/info/15/image/banner");
+}
+
+#wrap {
+    width: 1100px;
+    margin: 0 auto;
+    font-family: 'Karla', sans-serif;
+    background-color: #eee;
+    padding: 20px;
+}
+
+h1 {
+    color: #373b82;
+    font-family: 'Overlock SC', cursive;
+	text-shadow: 4px 4px 0px #FFFFFF, 8px 8px 0px #1d1f44;
+	font-size: 500%;
+    z-index: 10;
+    text-align: center;
+}
+
+label {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+table {
+    padding: 10px;
+    background-color: #d6d8db;
+    width: 180px;
+}
+
+tr {
+    padding: 0px;
+    margin: 0px;
+}
+
+td {
+    padding: 0px;
+    margin: 0px;
+}
