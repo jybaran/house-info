@@ -24,44 +24,44 @@ function initialize() {
     var searchBtn = document.querySelector('button');
     let main = document.querySelector('main');
 
-    
-    
+
+
     // keep a record of what the last search terms entered were
     //let lastCategory = category.value;
     //let lastSearch = searchTerm.value;
-    
+
     // these contain the results of filtering by category, and search term
     // finalGroup will contain the houses that need to be displayed after
     // the searching has been done. Each will be an array containing objects.
     // Each object will represent a house
     let categoryGroup;
     let finalGroup;
-    
+
     // To start with, set finalGroup to equal the entire houses database
     // then run updateDisplay(), so ALL houses are displayed initially.
     finalGroup = houses;
     updateDisplay();
-    
+
     // Set both to equal an empty array, in time for searches to be run
     categoryGroup = [];
     finalGroup = [];
-    
+
     // when the search button is clicked, invoke selectCategory() to start
     // a search running to select the category of houses we want to display
     searchBtn.onclick = selectCategory;
     
-    
+
     // JENNY: lots of this is bad
     function selectCategory(e) {
         console.log("got to select category");
         // Use preventDefault() to stop the form submitting — that would ruin
         // the experience
         e.preventDefault();
-        
+
         // Set these back to empty arrays, to clear out the previous search
         categoryGroup = [];
         finalGroup = [];
-        
+
         // if the category and search term are the same as they were the last time a
         // search was run, the results will be the same, so there is no point running
         // it again — just return out of the function
@@ -91,13 +91,13 @@ function initialize() {
                         categoryGroup.push(houses[i]);
                     }
                 }
-                
+
                 // Run selectHouses() after the filtering has bene done
                 selectHouses();
             }
         }
     }
-    
+
     // JENNY: this needs a lot of fixing, sorry
     // selectHouses() Takes the group of houses selected by selectCategory(), and further
     // filters them by the tnered search term (if one has bene entered)
@@ -120,14 +120,14 @@ function initialize() {
                     finalGroup.push(categoryGroup[i]);
                 }
             }
-            
+
             // run updateDisplay() after this second round of filtering has been done
             updateDisplay();
         }
-        
+
     }
-    
-    
+
+
     // start the process of updating the display with the new set of houses
     function updateDisplay() {
         console.log("got to updatedisplay");
@@ -135,7 +135,7 @@ function initialize() {
         while (main.firstChild) {
             main.removeChild(main.firstChild);
         }
-        
+
         // if no houses match the search term, display a "No results to display" message
         if(finalGroup.length === 0) {
             let para = document.createElement('p');
@@ -148,7 +148,7 @@ function initialize() {
             }
         }
     }
-    
+
     // fetchBlob uses fetch to retrieve the image for that house, and then sends the
     // resulting image display URL and house object on to showHouse() to finally
     // display it
@@ -173,7 +173,7 @@ function initialize() {
                         }
                         });
     }
-    
+
     // Display a house inside the <main> element
     function showHouse(objectURL, house) {
         console.log("got to showhouse");
@@ -191,24 +191,24 @@ function initialize() {
         let bathroom = document.createElement('p');
         let access = document.createElement('p');
         let elevator = document.createElement('p');
-        
+
         // JENNY: think we don't need this
         // give the <section> a classname equal to the house "type" property so it will display the correct icon
         //section.setAttribute('class', house.type);
-        
+
         // Give the <h2> textContent equal to the house "name" property, but with the first character
         // replaced with the uppercase version of the first character
         heading.textContent = house.name.replace(house.name.charAt(0), house.name.charAt(0).toUpperCase());
-        
+
         // Give the <h3> textContent equal to the house "area" property, but with the first character
         // replaced with the uppercase version of the first character
         subhead.textContent = house.area.replace(house.area.charAt(0), house.area.charAt(0).toUpperCase());
-        
+
         // Set the src of the <img> element to the ObjectURL, and the alt to the house "name" property
         image.src = objectURL;
         image.alt = house.name;
         image.width = "367";
-        
+
         // Give the <p>s textContent equal to the other house info
         built.textContent = "Built: " + house.built;
         reno.textContent = "Renovated: " + house.renovated;
@@ -219,7 +219,7 @@ function initialize() {
         bathroom.textContent = "Number sharing a bathroom: " + house.bathroom;
         access.textContent = "Accessible: " + house.accessible;
         elevator.textContent = "Elevator: " + house.elevator;
-        
+
         // append the elements to the DOM as appropriate, to add the house to the UI
         main.appendChild(section);
         section.appendChild(heading);
