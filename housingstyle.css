@@ -22,7 +22,8 @@ header {
     width: 1100px;
     margin: 0 auto;
     font-family: 'Karla', sans-serif;
-    background-color: #eee;
+    /*background-color: #eee;*/
+    background-color: #edf3fc;
     padding: 20px;
 }
 
@@ -43,7 +44,8 @@ label {
 
 table {
     padding: 10px;
-    background-color: #d6d8db;
+    /*background-color: #d6d8db;*/
+    background-color: #90a8cc;
     width: 180px;
 }
 
