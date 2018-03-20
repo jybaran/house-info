@@ -26,7 +26,6 @@ fetch('houses.json').then(function(response){
                           });
 
 
-
 // Sets up the logic, declares necessary variables, contains functions
 function initialize() {
     console.log("got to initialize");
@@ -35,8 +34,6 @@ function initialize() {
     // var searchTerm = document.querySelector('#searchTerm');
     let searchBtn = document.querySelector('button');
     let main = document.querySelector('main');
-
-
 
     // keep a record of what the last search terms entered were
     //let lastCategory = category.value;
@@ -104,7 +101,7 @@ function initialize() {
                     }
                 }
 
-                // Run selectHouses() after the filtering has bene done
+                // Run selectHouses() after the filtering has been done
                 selectHouses();
             }
         }
