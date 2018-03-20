@@ -14,76 +14,67 @@
         <div id="wrap">
             <aside>
                 <form>
-                    <div id="navbar">
+                    <div>
                         <!-- checkboxes for area of campus -->
                         <table>
-                            <tr><td><label for="area"><navheader>AREA OF CAMPUS</navheader></label></td></tr>
-                            <tr><td><input type = "checkbox" name = "Area" value = "Green Street"checked> Green Street</td></tr>
-                            <tr><td><input type = "checkbox" name = "Area" value = "Upper Elm"checked> Upper Elm</td></tr>
-                            <tr><td><input type = "checkbox" name = "Area" value = "Lower Elm"checked> Lower Elm</td></tr>
-                            <tr><td><input type = "checkbox" name = "Area" value = "Center Campus" checked> Center Campus</td></tr>
-                            <tr><td><input type = "checkbox" name = "Area" value = "East Quad" checked> East Quad</td></tr>
-                            <tr><td><input type = "checkbox" name = "Area" value = "West Quad" checked> West Quad</td></tr>
-                        </table>
+                            <td valign="top">
+                                <div id="navbarsize">
+                                <table id="categories">
+                                    <tr><td><label for="area"><navheader>AREA OF CAMPUS</navheader></label></td></tr>
+                                    <tr><td><input type = "checkbox" name = "Area" value = "Green Street"checked> Green Street</td></tr>
+                                    <tr><td><input type = "checkbox" name = "Area" value = "Upper Elm"checked> Upper Elm</td></tr>
+                                    <tr><td><input type = "checkbox" name = "Area" value = "Lower Elm"checked> Lower Elm</td></tr>
+                                    <tr><td><input type = "checkbox" name = "Area" value = "Center Campus" checked> Center Campus</td></tr>
+                                    <tr><td><input type = "checkbox" name = "Area" value = "East Quad" checked> East Quad</td></tr>
+                                    <tr><td><input type = "checkbox" name = "Area" value = "West Quad" checked> West Quad</td></tr>
+                                </table>
+                                <br/>
+                                <table id="categories">
+                                    <tr><td><label for="capacity">CAPACITY</label></td></tr>
+                                    <tr><td><input type = "checkbox" name = "Cap" value = "20-30" checked> 20-30</td></tr>
+                                    <tr><td><input type = "checkbox" name = "Cap" value = "31-50" checked> 31-50</td></tr>
+                                    <tr><td><input type = "checkbox" name = "Cap" value = "51-70" checked> 51-70</td></tr>
+                                    <tr><td><input type = "checkbox" name = "Cap" value = "71-105" checked> 71-100</td></tr>
+                                </table>  
+                                <br/>
+                                <table id="categories">
+                                    <tr><td><label for="renovated">YEAR RENOVATED</label></td></tr>
+                                    <tr><td><input type = "checkbox" name = "Renovated" value = "1800-1900" checked> 1800-1900</td></tr>
+                                    <tr><td><input type = "checkbox" name = "Renovated" value = "1901-2000" checked> 1901-2000</td></tr>
+                                    <tr><td><input type = "checkbox" name = "Renovated" value = "1901-2000" checked> 2001-2020</td></tr>
+                                </table>
+                                <br/>
+                                <table id="categories">
+                                    <tr><td><label for="capacity">CAPACITY</label></td></tr>
+                                    <tr><td><input type = "checkbox" name = "Cap" value = "20-30" checked> 20-30</td></tr>
+                                    <tr><td><input type = "checkbox" name = "Cap" value = "31-50" checked> 31-50</td></tr>
+                                    <tr><td><input type = "checkbox" name = "Cap" value = "51-70" checked> 51-70</td></tr>
+                                    <tr><td><input type = "checkbox" name = "Cap" value = "71-105" checked> 71-100</td></tr>
+                                </table>  
+                                <br/>
+                                <table id="categories">
+                                    <tr><td><label for="singles">NUMBER OF SINGLES</label></td></tr>
+                                    <tr><td><input type = "checkbox" name = "Singles" value = "10-20" checked> 10-20</td></tr>
+                                    <tr><td><input type = "checkbox" name = "Singles" value = "21-35" checked> 21-35</td></tr>
+                                    <tr><td><input type = "checkbox" name = "Singles" value = "36-50" checked> 36-50</td></tr>
+                                    <tr><td><input type = "checkbox" name = "Singles" value = "51-100" checked> 51-100</td></tr>
+                                </table> 
+                                <br/>
+                                <table id="categories">
+                                    <tr><td><label for="doubles">NUMBER OF DOUBLES</label></td></tr>
+                                    <tr><td><input type = "checkbox" name = "Doubles" value = "10-20" checked> 10-20</td></tr>
+                                    <tr><td><input type = "checkbox" name = "Doubles" value = "21-35" checked> 21-35</td></tr>
+                                    <tr><td><input type = "checkbox" name = "Doubles" value = "36-50" checked> 36-50</td></tr>
+                                    <tr><td><input type = "checkbox" name = "Doubles" value = "51-100" checked> 51-100</td></tr>
+                                </table>
+                                </div>
+                            </td>
+                            <td id="display" align="left"><main></main></td>
+                        </table>    
                     </div>
                     <br/>
-                    <div>
-                        <!-- checkboxes year built -->
-                        <table>
-                            <tr><td><label for="built"><navheader>YEAR BUILT</navheader></label></td></tr>
-                            <tr><td><input type = "checkbox" name = "Year" value = "1700-1800" checked> 1700-1800</td></tr>
-                            <tr><td><input type = "checkbox" name = "Year" value = "1801-1900"checked> 1801-1900</td></tr>
-                            <tr><td><input type = "checkbox" name = "Year" value = "1801-1900"checked> 1901-2100</td></tr>
-                        </table>
-                                    
-                    </div>
-                    <br/>
-                    <div>
-                        <!-- checkboxes for year renovated -->
-                        <table>
-                            <tr><td><label for="renovated">YEAR RENOVATED</label></td></tr>
-                            <tr><td><input type = "checkbox" name = "Renovated" value = "1800-1900" checked> 1800-1900</td></tr>
-                            <tr><td><input type = "checkbox" name = "Renovated" value = "1901-2000" checked> 1901-2000</td></tr>
-                            <tr><td><input type = "checkbox" name = "Renovated" value = "1901-2000" checked> 2001-2020</td></tr>
-                        </table>
-                    </div>
-                    <br/>
-                    <div>
-                        <!-- checkboxes for capacity -->
-                        <table>
-                            <tr><td><label for="capacity">CAPACITY</label></td></tr>
-                            <tr><td><input type = "checkbox" name = "Cap" value = "20-30" checked> 20-30</td></tr>
-                            <tr><td><input type = "checkbox" name = "Cap" value = "31-50" checked> 31-50</td></tr>
-                            <tr><td><input type = "checkbox" name = "Cap" value = "51-70" checked> 51-70</td></tr>
-                            <tr><td><input type = "checkbox" name = "Cap" value = "71-105" checked> 71-100</td></tr>
-                        </table>         
-                    </div>
-                    <br/>
-                    <div>
-                        <!-- checkboxes for number of singles -->
-                        <table>
-                            <tr><td><label for="singles">NUMBER OF SINGLES</label></td></tr>
-                            <tr><td><input type = "checkbox" name = "Singles" value = "10-20" checked> 10-20</td></tr>
-                            <tr><td><input type = "checkbox" name = "Singles" value = "21-35" checked> 21-35</td></tr>
-                            <tr><td><input type = "checkbox" name = "Singles" value = "36-50" checked> 36-50</td></tr>
-                            <tr><td><input type = "checkbox" name = "Singles" value = "51-100" checked> 51-100</td></tr>
-                        </table>       
-                    </div>
-                    <br/>
-                    <div>
-                        <!-- checkboxes for number of doubles -->
-                        <table>
-                            <tr><td><label for="doubles">NUMBER OF DOUBLES</label></td></tr>
-                            <tr><td><input type = "checkbox" name = "Doubles" value = "10-20" checked> 10-20</td></tr>
-                            <tr><td><input type = "checkbox" name = "Doubles" value = "21-35" checked> 21-35</td></tr>
-                            <tr><td><input type = "checkbox" name = "Doubles" value = "36-50" checked> 36-50</td></tr>
-                            <tr><td><input type = "checkbox" name = "Doubles" value = "51-100" checked> 51-100</td></tr>
-                        </table>
-                    </div>
                 </form>
             </aside>
-            <main>
-            </main>
         </div>
     </body>
 </html>

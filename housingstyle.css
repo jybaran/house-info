@@ -42,19 +42,19 @@ label {
     margin-bottom: 10px;
 }
 
-table {
+
+#categories {
     padding: 10px;
     /*background-color: #d6d8db;*/
     background-color: #90a8cc;
     width: 180px;
 }
 
-tr {
-    padding: 0px;
-    margin: 0px;
+#display {
+    width: 1000px;
+    padding-left: 100px;
 }
 
-td {
-    padding: 0px;
-    margin: 0px;
+#navbarsize {
+    width: 180px;
 }
