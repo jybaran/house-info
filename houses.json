@@ -11,7 +11,7 @@
  "bathroom" : 23,
  "accessible" : true,
  "elevator" : false,
- "image" : "https://drive.google.com/open?id=1YpSyDQLHMMsgV9InF7QYz5_4daaQdm-u"
+ "image" : "chapin.jpg"
  },
  {
  "name" : "Hubbard",
@@ -25,7 +25,7 @@
  "bathroom" : 18,
  "accessible" : true,
  "elevator" : false,
- "image" : "https://drive.google.com/open?id=131OyzVuE1PHvyi7BBYNZ-xvkhyiTC9Zl"
+ "image" : "hubbard.jpg"
  },
  {
  "name" : "Lawrence",
@@ -39,7 +39,7 @@
  "bathroom" : 23,
  "accessible" : true,
  "elevator" : false,
- "image" : "https://drive.google.com/open?id=1FjXOrm7fRa8ahTjknS2EXolNVtwVWYYi"
+ "image" : "lawrence.jpg"
  },
  {
  "name" : "Morris",
@@ -53,7 +53,7 @@
  "bathroom" : 23,
  "accessible" : true,
  "elevator" : false,
- "image" : "https://drive.google.com/open?id=19XLbgZuX2oST-WrW2KwlnazJrfgbNtNo"
+ "image" : "morris.jpg"
  },
  {
  "name" : "Parsons",
@@ -67,7 +67,7 @@
  "bathroom" : 18,
  "accessible" : true,
  "elevator" : false,
- "image" : "https://drive.google.com/open?id=1cblek3a7xldnyGDjr5RF1y92cN6CtjG4"
+ "image" : "parsons.jpg"
  },
  {
  "name" : "Tyler",
@@ -81,7 +81,7 @@
  "bathroom" : 23,
  "accessible" : true,
  "elevator" : false,
- "image" : "https://drive.google.com/open?id=1s9FdyVuhoQYtpAl8YowtNIiAewZsmhqn"
+ "image" : "tyler.jpg"
  },
  {
  "name" : "Washburn",
@@ -95,7 +95,7 @@
  "bathroom" : 17,
  "accessible" : true,
  "elevator" : false,
- "image" : "https://drive.google.com/open?id=1eR7AaGDBwKEPK9tPeakbWyql5BlAUex4"
+ "image" : "washburn.jpg"
  },
  {
  "name" : "Cutter",
@@ -109,7 +109,7 @@
  "bathroom" : 40,
  "accessible" : true,
  "elevator" : true,
- "image" : "https://drive.google.com/open?id=1dszv7k_qDtmrEtf8jU7iS041q2ek_llS"
+ "image" : "cutter.jpg"
  },
  {
  "name" : "Haven-Wesley",
@@ -123,7 +123,7 @@
  "bathroom" : 23,
  "accessible" : true,
  "elevator" : false,
- "image" : "https://drive.google.com/open?id=1qrFX6P_3IDjvFFqTC7kOeQt4SjzWYK2K"
+ "image" : "wesley.jpg"
  },
  {
  "name" : "Hopkins",
@@ -137,7 +137,7 @@
  "bathroom" : 13,
  "accessible" : true,
  "elevator" : false,
- "image" : "https://drive.google.com/open?id=1wiIBrT8vt5c9zG8C90vEccMG4zblTDkg"
+ "image" : "hopkins.jpg"
  },
  {
  "name" : "Park",
@@ -151,7 +151,7 @@
  "bathroom" : 21,
  "accessible" : false,
  "elevator" : false,
- "image" : "https://drive.google.com/open?id=1jrmcZ5SP-PuVU5ZzeqPPNPVRtmewOMA3"
+ "image" : "park.jpg"
  },
  {
  "name" : "Sessions",
@@ -165,7 +165,7 @@
  "bathroom" : 18,
  "accessible" : true,
  "elevator" : false,
- "image" : "https://drive.google.com/open?id=1H14BfMv8Ru9lp5yLhENHf8MM4UvbAEc6"
+ "image" : "sessions.jpg"
  },
  {
  "name" : "Tenney",
@@ -179,7 +179,7 @@
  "bathroom" : 7,
  "accessible" : true,
  "elevator" : false,
- "image" : "https://drive.google.com/open?id=1Cb9j5hlER0qzFHuMzDi8klsPQHDm5LQQ"
+ "image" : "tenney.jpg"
  },
  {
  "name" : "Ziskind",
@@ -193,7 +193,7 @@
  "bathroom" : 40,
  "accessible" : true,
  "elevator" : true,
- "image" : "https://drive.google.com/open?id=1v_sbe5GztyPJ4aPZdDnRqW6kn1lI8idV"
+ "image" : "ziskind.jpg"
  },
  {
  "name" : "44 Green St",
@@ -207,7 +207,7 @@
  "bathroom" : 5,
  "accessible" : false,
  "elevator" : false,
- "image" : "https://www.smith.edu/sites/default/files/media/office_images/college_relations/logocmyk-2014.jpg"
+ "image" : "smithlogo.jpg"
  },
  {
  "name" : "54 Green St",
@@ -221,7 +221,7 @@
  "bathroom" : 5,
  "accessible" : false,
  "elevator" : false,
- "image" : "https://www.smith.edu/sites/default/files/media/office_images/college_relations/logocmyk-2014.jpg"
+ "image" : "smithlogo.jpg"
  },
  {
  "name" : "Albright",
@@ -235,7 +235,7 @@
  "bathroom" : 21,
  "accessible" : false,
  "elevator" : false,
- "image" : "https://drive.google.com/open?id=1AUaXXpFGV_Qgfw1MIysaG7oWEytP752l"
+ "image" : "albright.jpg"
  },
  {
  "name" : "Baldwin",
@@ -249,7 +249,7 @@
  "bathroom" : 18,
  "accessible" : true,
  "elevator" : false,
- "image" : "https://drive.google.com/open?id=1Rh8az480L2nVTCVQAjHRX9g-HO4kdWa4"
+ "image" : "baldwin.jpg"
  },
  {
  "name" : "Chase",
@@ -263,7 +263,7 @@
  "bathroom" : 27,
  "accessible" : true,
  "elevator" : true,
- "image" : "https://drive.google.com/open?id=1IlhKv3hx_Zb0VcMvxIsmnW0OtrSbcuSb"
+ "image" : "chase.jpg"
  },
  {
  "name" : "Duckett",
@@ -277,7 +277,7 @@
  "bathroom" : 15,
  "accessible" : true,
  "elevator" : true,
- "image" : "https://drive.google.com/open?id=1DlVPCuuSAt6gCcppT7S1pMojHgDtabSq"
+ "image" : "duckett.jpg"
  },
  {
  "name" : "Capen",
@@ -291,7 +291,7 @@
  "bathroom" : 24,
  "accessible" : true,
  "elevator" : false,
- "image" : "https://drive.google.com/open?id=1WjF1zYEMQbv1f10YrrGS7HVetlINdMl8"
+ "image" : "capen.jpg"
  },
  {
  "name" : "Gillett",
@@ -305,7 +305,7 @@
  "bathroom" : 24,
  "accessible" : true,
  "elevator" : false,
- "image" : "https://drive.google.com/open?id=1NJyG_vhUS4yR--SGf43CeuYfxq9jk7Vp"
+ "image" : "gillet.jpg"
  },
  {
  "name" : "Lamont",
@@ -319,7 +319,7 @@
  "bathroom" : 25,
  "accessible" : true,
  "elevator" : true,
- "image" : "https://drive.google.com/open?id=1ldAtJ13JQntBKcdKRGscsIZVRI-eUNCF"
+ "image" : "lamont.jpg"
  },
  {
  "name" : "Northrop",
@@ -333,7 +333,7 @@
  "bathroom" : 22,
  "accessible" : true,
  "elevator" : true,
- "image" : "https://drive.google.com/open?id=15ZyOcrg6rU_4V5JlV0MCHt8F3HPLkRaB"
+ "image" : "northrop.jpg"
  },
  {
  "name" : "Talbot",
@@ -347,7 +347,7 @@
  "bathroom" : 26,
  "accessible" : false,
  "elevator" : false,
- "image" : "https://drive.google.com/open?id=1BLzn5VpcoDIvFGCvBsdvE9ifosveYXad"
+ "image" : "talbot.jpg"
  },
  {
  "name" : "Comstock",
@@ -361,7 +361,7 @@
  "bathroom" : 30,
  "accessible" : true,
  "elevator" : true,
- "image" : "https://drive.google.com/open?id=1hcE_F-FElzdDf51OIBx1s61Ly9SHSm9g"
+ "image" : "comstock.jpg"
  },
  {
  "name" : "Wilder",
@@ -375,7 +375,7 @@
  "bathroom" : 30,
  "accessible" : true,
  "elevator" : true,
- "image" : "https://drive.google.com/open?id=16xVn9gnDPbkSiJPrapsOGyzhVNYY-NoB"
+ "image" : "wilder.jpg"
  },
  {
  "name" : "Gardiner",
@@ -389,7 +389,7 @@
  "bathroom" : 25,
  "accessible" : true,
  "elevator" : false,
- "image" : "https://drive.google.com/open?id=1Ke7y7Z1Rkh_9NbUXW55a3k64zv-ryNl9"
+ "image" : "gardiner.jpg"
  },
  {
  "name" : "Morrow",
@@ -403,7 +403,7 @@
  "bathroom" : 25,
  "accessible" : true,
  "elevator" : false,
- "image" : "https://drive.google.com/open?id=1hXv6IwHir6JDsaDRaLcER6hdyVCyGPUc"
+ "image" : "morrow.jpg"
  },
  {
  "name" : "Wilson",
@@ -417,7 +417,7 @@
  "bathroom" : 24,
  "accessible" : true,
  "elevator" : false,
- "image" : "https://drive.google.com/open?id=1cZNS_ecSyBz17nmX6tMSGQF2nteNwx82"
+ "image" : "wilson.jpg"
  },
  {
  "name" : "Cushing",
@@ -431,7 +431,7 @@
  "bathroom" : 23,
  "accessible" : true,
  "elevator" : false,
- "image" : "https://drive.google.com/open?id=1tK77pPcn72YN8jZj4dP6RMCyUFJq5z6O"
+ "image" : "cushing.jpg"
  },
  {
  "name" : "Emerson",
@@ -445,7 +445,7 @@
  "bathroom" : 17,
  "accessible" : true,
  "elevator" : false,
- "image" : "https://drive.google.com/open?id=1Dg4gq-LahnZaVFj_DNzf2moGwRZXfoc4"
+ "image" : "emerson.jpg"
  },
  {
  "name" : "Jordan",
@@ -459,7 +459,7 @@
  "bathroom" : 27,
  "accessible" : true,
  "elevator" : false,
- "image" : "https://drive.google.com/open?id=18gXvTBUqDNU3ih0iG1hD5miAkji5BgD5"
+ "image" : "jordan.jpg"
  },
  {
  "name" : "King",
@@ -473,7 +473,7 @@
  "bathroom" : 25,
  "accessible" : true,
  "elevator" : true,
- "image" : "https://drive.google.com/open?id=1C7TQjMploLJIVzPQb4mf7AV0xpE72Vjm"
+ "image" : "king.jpg"
  },
  {
  "name" : "Scales",
@@ -487,6 +487,6 @@
  "bathroom" : 25,
  "accessible" : true,
  "elevator" : true,
- "image" : "https://drive.google.com/open?id=1CezHhRYp8999IoBsQ9p_mxctR5WgzFwN"
+ "image" : "scales.jpg"
  }
 ]

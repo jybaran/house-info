@@ -154,7 +154,7 @@ function initialize() {
         console.log("got to fetchblob");
         // grab url from house.image property
         // TEMP URL
-        let url = "images/" + "smithlogo.jpg";
+        let url = "images/" + house.image;
         // Use fetch to fetch the image, and convert the resulting response to a blob
         // Again, if any errors occur we report them in the console.
         fetch(url).then(function(response) {
@@ -197,6 +197,7 @@ function initialize() {
         // Set the src of the <img> element to the ObjectURL, and the alt to the house "name" property
         image.src = objectURL;
         image.alt = house.name;
+        image.width = "367";
         
         // append the elements to the DOM as appropriate, to add the house to the UI
         main.appendChild(section);
