@@ -8,33 +8,62 @@ fetch('houses.json').then(function(response){
                           if(response.ok){
                           response.json().then(function(json){
                                                houses = json;
+
+                                               houses.sort( function( a, b ) {
+                                                           a = a.name.toLowerCase();
+                                                           b = b.name.toLowerCase();
+
+                                                           return a < b ? -1 : a > b ? 1 : 0;
+                                                           });
+                                               houses.sort();
+
                                                initialize();
                                                });
+
                           } else {
                           console.log('Network request for houses.json failed with response ' + response.status + ': ' + response.statusText);
                           }
                           });
 
+
 // Sets up the logic, declares necessary variables, contains functions
 function initialize() {
     console.log("got to initialize");
     // grab the UI elements that we need to manipulate
-    // var category = document.querySelector('#category');
-    // var searchTerm = document.querySelector('#searchTerm');
+    let tempAreaTarget = document.getElementsByName('Area');
+    let areaTarget = [];
+    for (let i = 0; i < tempAreaTarget.length; i++) {
+        if (tempAreaTarget[i].checked) {
+            areaTarget.push(tempAreaTarget[i].value);
+        }
+    }
+    let tempCapTarget = document.getElementsByName('Cap');
+    let capTarget = [];
+    for (let i = 0; i < tempCapTarget.length; i++) {
+        if (tempCapTarget[i].checked) {
+            capTarget.push(tempCapTarget[i].value);
+        }
+    }
+    let tempBuiltTarget = document.getElementsByName('Built');
+    let builtTarget = [];
+    for (let i = 0; i < tempBuiltTarget.length; i++) {
+        if (tempBuiltTarget[i].checked) {
+            builtTarget.push(tempBuiltTarget[i].value);
+        }
+    }
     let searchBtn = document.querySelector('button');
     let main = document.querySelector('main');
 
-
-
     // keep a record of what the last search terms entered were
-    //let lastCategory = category.value;
-    //let lastSearch = searchTerm.value;
+    let lastAreaTarget;
+    let lastCapTarget;
+    let lastBuiltTarget;
 
     // these contain the results of filtering by category, and search term
     // finalGroup will contain the houses that need to be displayed after
     // the searching has been done. Each will be an array containing objects.
-    // Each object will represent a house
-    let categoryGroup;
+    // Each object will represent a house.
+    let areaGroup;
     let finalGroup;
 
     // To start with, set finalGroup to equal the entire houses database
@@ -43,56 +72,58 @@ function initialize() {
     updateDisplay();
 
     // Set both to equal an empty array, in time for searches to be run
-    categoryGroup = [];
+    areaGroup = [];
     finalGroup = [];
 
-    // when the search button is clicked, invoke selectCategory() to start
+    // when the search button is clicked, invoke selectArea() to start
     // a search running to select the category of houses we want to display
-    searchBtn.onclick = selectCategory;
-    
+    searchBtn.onclick = selectArea;
+
 
     // JENNY: lots of this is bad
-    function selectCategory(e) {
-        console.log("got to select category");
+    function selectArea(e) {
+        console.log("got to select area");
         // Use preventDefault() to stop the form submitting — that would ruin
         // the experience
         e.preventDefault();
 
         // Set these back to empty arrays, to clear out the previous search
-        categoryGroup = [];
+        areaGroup = [];
         finalGroup = [];
 
-        // if the category and search term are the same as they were the last time a
+        // if the area other limits are the same as they were the last time a
         // search was run, the results will be the same, so there is no point running
         // it again — just return out of the function
-        if(category.value === lastCategory && searchTerm.value === lastSearch) {
+        if( areaTarget == lastAreaTarget && capTarget == lastCapTarget && builtTarget == lastBuiltTarget ) {
+            //console.log("trapped in the if");
             return;
         } else {
             // update the record of last category and search term
-            lastCategory = category.value;
-            lastSearch = searchTerm.value;
-            // In this case we want to select all houses, then filter them by the search
-            // term, so we just set categoryGroup to the entire JSON object, then run selectHouses()
-            if(category.value === 'All') {
+            lastAreaTarget = areaTarget;
+            lastCapTarget = capTarget;
+            lastBuiltTarget = builtTarget;
+
+            // In this case we want to select all houses, then filter them further,
+            // so we just set areaGroup to the entire JSON object, then run selectHouses()
+            if(areaTarget.length == 6) {
                 categoryGroup = houses;
                 selectHouses();
-                // If a specific category is chosen, we need to filter out the houses not in that
-                // category, then put the remaining houses inside categoryGroup, before running
+                // If a specific area is chosen, we need to filter out the houses not in that
+                // area, then put the remaining houses inside areaGroup, before running
                 // selectHouses()
             } else {
-                // the values in the <option> elements are uppercase, whereas the categories
-                // store in the JSON (under "type") are lowercase. We therefore need to convert
-                // to lower case before we do a comparison
-                let lowerCaseType = category.value.toLowerCase();
-                for(let i = 0; i < houses.length ; i++) {
-                    // If a houses type property is the same as the chosen category, we want to
-                    // dispay it, so we push it onto the categoryGroup array
-                    if(houses[i].type === lowerCaseType) {
-                        categoryGroup.push(houses[i]);
+                for( let j = 0; j < areaTarget.length; j++ ) {
+                    for( let i = 0; i < houses.length ; i++) {
+                        // If a houses type property is the same as the chosen category, we want to
+                        // display it, so we push it onto the categoryGroup array
+                        if(houses[i].area == areaTarget[j]) {
+                            areaGroup.push(houses[i]);
+                        }
                     }
                 }
-
-                // Run selectHouses() after the filtering has bene done
+                console.log("areagroup created");
+                console.log(areaGroup);
+                // Run selectHouses() after the filtering has been done
                 selectHouses();
             }
         }
@@ -100,30 +131,33 @@ function initialize() {
 
     // JENNY: this needs a lot of fixing, sorry
     // selectHouses() Takes the group of houses selected by selectCategory(), and further
-    // filters them by the tnered search term (if one has bene entered)
+    // filters them by the other checkboxes (if any have been entered)
     function selectHouses() {
         console.log("got to selecthouses");
-        // If no search term has been entered, just make the finalGroup array equal to the categoryGroup
+        // If no further limits have been entered, just make the finalGroup array equal to the areaGroup
         // array — we don't want to filter the houses further — then run updateDisplay().
-        if(searchTerm.value === '') {
-            finalGroup = categoryGroup;
+        if(capTarget.length == 4 && builtTarget.length == 4) {
+            finalGroup = areaGroup;
             updateDisplay();
         } else {
-            // Make sure the search term is converted to lower case before comparison. We've kept the
+            // Make sure the ##search term## is converted to lower case before comparison. We've kept the
             // house names all lower case to keep things simple
-            let lowerCaseSearchTerm = searchTerm.value.toLowerCase();
-            // For each house in categoryGroup, see if the search term is contained inside the house name
+            //let lowerCaseSearchTerm = searchTerm.value.toLowerCase();
+            // For each house in categoryGroup, see if the ##search term## is contained inside the house name
             // (if the indexOf() result doesn't return -1, it means it is) — if it is, then push the house
             // onto the finalGroup array
-            for(let i = 0; i < categoryGroup.length ; i++) {
-                if(categoryGroup[i].name.indexOf(lowerCaseSearchTerm) !== -1) {
-                    finalGroup.push(categoryGroup[i]);
-                }
-            }
+            //for(let i = 0; i < categoryGroup.length ; i++) {
+                //if(categoryGroup[i].name.indexOf(lowerCaseSearchTerm) !== -1) {
+                    //finalGroup.push(categoryGroup[i]);
+                //}
+            //}
 
             // run updateDisplay() after this second round of filtering has been done
+            // TEMP FOR TEST
+            finalGroup = areaGroup;
             updateDisplay();
         }
+
 
     }
 
