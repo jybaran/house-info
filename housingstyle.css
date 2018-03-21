@@ -93,3 +93,7 @@ button {
     font-size: 15px;
     padding: 8px 32px;
 }
+
+button:active {
+    background-color: #384f75;
+}
