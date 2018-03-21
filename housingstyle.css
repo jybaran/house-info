@@ -62,14 +62,14 @@ td {
 */
 
 /* The left column of the table with the navigation bar */
-.categories {
+#categories {
     padding: 10px;
     background-color: #90a8cc;
     width: 180px;
 }
 
 /* The right column of the table that displays the search results */
-.display {
+#display {
     width: 1000px;
     padding-left: 100px;
     /*overflow-y: scroll;*/
