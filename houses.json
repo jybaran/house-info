@@ -9,8 +9,8 @@
  "doubles" : 17,
  "triples" : 0,
  "bathroom" : 23,
- "accessible" : true,
- "elevator" : false,
+ "accessible" : "true",
+ "elevator" : "false",
  "image" : "chapin.jpg"
  },
  {
@@ -23,8 +23,8 @@
  "doubles" : 16,
  "triples" : 0,
  "bathroom" : 18,
- "accessible" : true,
- "elevator" : false,
+ "accessible" : "true",
+ "elevator" : "false",
  "image" : "hubbard.jpg"
  },
  {
@@ -37,8 +37,8 @@
  "doubles" : 17,
  "triples" : 0,
  "bathroom" : 23,
- "accessible" : true,
- "elevator" : false,
+ "accessible" : "true",
+ "elevator" : "false",
  "image" : "lawrence.jpg"
  },
  {
@@ -51,8 +51,8 @@
  "doubles" : 17,
  "triples" : 0,
  "bathroom" : 23,
- "accessible" : true,
- "elevator" : false,
+ "accessible" : "true",
+ "elevator" : "false",
  "image" : "morris.jpg"
  },
  {
@@ -65,8 +65,8 @@
  "doubles" : 12,
  "triples" : 0,
  "bathroom" : 18,
- "accessible" : true,
- "elevator" : false,
+ "accessible" : "true",
+ "elevator" : "false",
  "image" : "parsons.jpg"
  },
  {
@@ -79,8 +79,8 @@
  "doubles" : 14,
  "triples" : 0,
  "bathroom" : 23,
- "accessible" : true,
- "elevator" : false,
+ "accessible" : "true",
+ "elevator" : "false",
  "image" : "tyler.jpg"
  },
  {
@@ -93,8 +93,8 @@
  "doubles" : 14,
  "triples" : 0,
  "bathroom" : 17,
- "accessible" : true,
- "elevator" : false,
+ "accessible" : "true",
+ "elevator" : "false",
  "image" : "washburn.jpg"
  },
  {
@@ -107,8 +107,8 @@
  "doubles" : 8,
  "triples" : 0,
  "bathroom" : 40,
- "accessible" : true,
- "elevator" : true,
+ "accessible" : "true",
+ "elevator" : "true",
  "image" : "cutter.jpg"
  },
  {
@@ -121,8 +121,8 @@
  "doubles" : 23,
  "triples" : 0,
  "bathroom" : 23,
- "accessible" : true,
- "elevator" : false,
+ "accessible" : "true",
+ "elevator" : "false",
  "image" : "wesley.jpg"
  },
  {
@@ -135,8 +135,8 @@
  "doubles" : 3,
  "triples" : 0,
  "bathroom" : 13,
- "accessible" : true,
- "elevator" : false,
+ "accessible" : "true",
+ "elevator" : "false",
  "image" : "hopkins.jpg"
  },
  {
@@ -149,8 +149,8 @@
  "doubles" : 17,
  "triples" : 0,
  "bathroom" : 21,
- "accessible" : false,
- "elevator" : false,
+ "accessible" : "false",
+ "elevator" : "false",
  "image" : "park.jpg"
  },
  {
@@ -163,8 +163,8 @@
  "doubles" : 12,
  "triples" : 0,
  "bathroom" : 18,
- "accessible" : true,
- "elevator" : false,
+ "accessible" : "true",
+ "elevator" : "false",
  "image" : "sessions.jpg"
  },
  {
@@ -177,8 +177,8 @@
  "doubles" : 0,
  "triples" : 0,
  "bathroom" : 7,
- "accessible" : true,
- "elevator" : false,
+ "accessible" : "true",
+ "elevator" : "false",
  "image" : "tenney.jpg"
  },
  {
@@ -191,8 +191,8 @@
  "doubles" : 8,
  "triples" : 0,
  "bathroom" : 40,
- "accessible" : true,
- "elevator" : true,
+ "accessible" : "true",
+ "elevator" : "true",
  "image" : "ziskind.jpg"
  },
  {
@@ -205,8 +205,8 @@
  "doubles" : 5,
  "triples" : 0,
  "bathroom" : 5,
- "accessible" : false,
- "elevator" : false,
+ "accessible" : "false",
+ "elevator" : "false",
  "image" : "smithlogo.jpg"
  },
  {
@@ -219,8 +219,8 @@
  "doubles" : 0,
  "triples" : 0,
  "bathroom" : 5,
- "accessible" : false,
- "elevator" : false,
+ "accessible" : "false",
+ "elevator" : "false",
  "image" : "smithlogo.jpg"
  },
  {
@@ -233,8 +233,8 @@
  "doubles" : 19,
  "triples" : 2,
  "bathroom" : 21,
- "accessible" : false,
- "elevator" : false,
+ "accessible" : "false",
+ "elevator" : "false",
  "image" : "albright.jpg"
  },
  {
@@ -247,8 +247,8 @@
  "doubles" : 7,
  "triples" : 0,
  "bathroom" : 18,
- "accessible" : true,
- "elevator" : false,
+ "accessible" : "true",
+ "elevator" : "false",
  "image" : "baldwin.jpg"
  },
  {
@@ -261,8 +261,8 @@
  "doubles" : 0,
  "triples" : 0,
  "bathroom" : 27,
- "accessible" : true,
- "elevator" : true,
+ "accessible" : "true",
+ "elevator" : "true",
  "image" : "chase.jpg"
  },
  {
@@ -275,8 +275,8 @@
  "doubles" : 8,
  "triples" : 0,
  "bathroom" : 15,
- "accessible" : true,
- "elevator" : true,
+ "accessible" : "true",
+ "elevator" : "true",
  "image" : "duckett.jpg"
  },
  {
@@ -289,8 +289,8 @@
  "doubles" : 22,
  "triples" : 0,
  "bathroom" : 24,
- "accessible" : true,
- "elevator" : false,
+ "accessible" : "true",
+ "elevator" : "false",
  "image" : "capen.jpg"
  },
  {
@@ -303,8 +303,8 @@
  "doubles" : 4,
  "triples" : 0,
  "bathroom" : 24,
- "accessible" : true,
- "elevator" : false,
+ "accessible" : "true",
+ "elevator" : "false",
  "image" : "gillett.jpg"
  },
  {
@@ -317,8 +317,8 @@
  "doubles" : 22,
  "triples" : 1,
  "bathroom" : 25,
- "accessible" : true,
- "elevator" : true,
+ "accessible" : "true",
+ "elevator" : "true",
  "image" : "lamont.jpg"
  },
  {
@@ -331,8 +331,8 @@
  "doubles" : 4,
  "triples" : 0,
  "bathroom" : 22,
- "accessible" : true,
- "elevator" : true,
+ "accessible" : "true",
+ "elevator" : "true",
  "image" : "northrop.jpg"
  },
  {
@@ -345,8 +345,8 @@
  "doubles" : 27,
  "triples" : 0,
  "bathroom" : 26,
- "accessible" : false,
- "elevator" : false,
+ "accessible" : "false",
+ "elevator" : "false",
  "image" : "talbot.jpg"
  },
  {
@@ -359,8 +359,8 @@
  "doubles" : 10,
  "triples" : 1,
  "bathroom" : 30,
- "accessible" : true,
- "elevator" : true,
+ "accessible" : "true",
+ "elevator" : "true",
  "image" : "comstock.jpg"
  },
  {
@@ -373,8 +373,8 @@
  "doubles" : 11,
  "triples" : 1,
  "bathroom" : 30,
- "accessible" : true,
- "elevator" : true,
+ "accessible" : "true",
+ "elevator" : "true",
  "image" : "wilder.jpg"
  },
  {
@@ -387,8 +387,8 @@
  "doubles" : 12,
  "triples" : 1,
  "bathroom" : 25,
- "accessible" : true,
- "elevator" : false,
+ "accessible" : "true",
+ "elevator" : "false",
  "image" : "gardiner.jpg"
  },
  {
@@ -401,8 +401,8 @@
  "doubles" : 12,
  "triples" : 1,
  "bathroom" : 25,
- "accessible" : true,
- "elevator" : false,
+ "accessible" : "true",
+ "elevator" : "false",
  "image" : "morrow.jpg"
  },
  {
@@ -415,8 +415,8 @@
  "doubles" : 12,
  "triples" : 0,
  "bathroom" : 24,
- "accessible" : true,
- "elevator" : false,
+ "accessible" : "true",
+ "elevator" : "false",
  "image" : "wilson.jpg"
  },
  {
@@ -429,8 +429,8 @@
  "doubles" : 9,
  "triples" : 1,
  "bathroom" : 23,
- "accessible" : true,
- "elevator" : false,
+ "accessible" : "true",
+ "elevator" : "false",
  "image" : "cushing.jpg"
  },
  {
@@ -443,8 +443,8 @@
  "doubles" : 13,
  "triples" : 0,
  "bathroom" : 17,
- "accessible" : true,
- "elevator" : false,
+ "accessible" : "true",
+ "elevator" : "false",
  "image" : "emerson.jpg"
  },
  {
@@ -457,8 +457,8 @@
  "doubles" : 14,
  "triples" : 1,
  "bathroom" : 27,
- "accessible" : true,
- "elevator" : false,
+ "accessible" : "true",
+ "elevator" : "false",
  "image" : "jordan.jpg"
  },
  {
@@ -471,8 +471,8 @@
  "doubles" : 1,
  "triples" : 1,
  "bathroom" : 25,
- "accessible" : true,
- "elevator" : true,
+ "accessible" : "true",
+ "elevator" : "true",
  "image" : "king.jpg"
  },
  {
@@ -485,8 +485,8 @@
  "doubles" : 0,
  "triples" : 0,
  "bathroom" : 25,
- "accessible" : true,
- "elevator" : true,
+ "accessible" : "true",
+ "elevator" : "true",
  "image" : "scales.jpg"
  }
 ]
