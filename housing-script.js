@@ -37,16 +37,27 @@ function initialize() {
             areaTarget.push(tempAreaTarget[i].value);
         }
     }
-    console.log(areaTarget);
-    let builtTarget = document.querySelector('#built');
-    let accessTarget = document.querySelector('#accessibility');
+    let tempCapTarget = document.getElementsByName('Cap');
+    let capTarget = [];
+    for (let i = 0; i < tempCapTarget.length; i++) {
+        if (tempCapTarget[i].checked) {
+            capTarget.push(tempCapTarget[i].value);
+        }
+    }
+    let tempBuiltTarget = document.getElementsByName('Built');
+    let builtTarget = [];
+    for (let i = 0; i < tempBuiltTarget.length; i++) {
+        if (tempBuiltTarget[i].checked) {
+            builtTarget.push(tempBuiltTarget[i].value);
+        }
+    }
     let searchBtn = document.querySelector('button');
     let main = document.querySelector('main');
 
     // keep a record of what the last search terms entered were
     let lastAreaTarget;
-    let lastBuiltTarget = builtTarget.value;
-    let lastAccessTarget = accessTarget.value;
+    let lastCapTarget;
+    let lastBuiltTarget;
 
     // these contain the results of filtering by category, and search term
     // finalGroup will contain the houses that need to be displayed after
@@ -83,19 +94,19 @@ function initialize() {
         // if the area other limits are the same as they were the last time a
         // search was run, the results will be the same, so there is no point running
         // it again — just return out of the function
-        if( areaTarget == lastAreaTarget && accessTarget.value == lastAccessTarget && builtTarget.value == lastBuiltTarget ) {
+        if( areaTarget == lastAreaTarget && capTarget == lastCapTarget && builtTarget == lastBuiltTarget ) {
             //console.log("trapped in the if");
             return;
         } else {
-            // update the record of last area and search targets
+            // update the record of last category and search term
             lastAreaTarget = areaTarget;
-            lastBuiltTarget = builtTarget.value;
-            lastAccessTarget = accessTarget.value;
+            lastCapTarget = capTarget;
+            lastBuiltTarget = builtTarget;
 
             // In this case we want to select all houses, then filter them further,
             // so we just set areaGroup to the entire JSON object, then run selectHouses()
             if(areaTarget.length == 6) {
-                areaGroup = houses;
+                categoryGroup = houses;
                 selectHouses();
                 // If a specific area is chosen, we need to filter out the houses not in that
                 // area, then put the remaining houses inside areaGroup, before running
@@ -103,8 +114,8 @@ function initialize() {
             } else {
                 for( let j = 0; j < areaTarget.length; j++ ) {
                     for( let i = 0; i < houses.length ; i++) {
-                        // If a houses area property is the same as the chosen area, we want to
-                        // display it, so we push it onto the areaGroup array
+                        // If a houses type property is the same as the chosen category, we want to
+                        // display it, so we push it onto the categoryGroup array
                         if(houses[i].area == areaTarget[j]) {
                             areaGroup.push(houses[i]);
                         }
@@ -125,32 +136,28 @@ function initialize() {
         console.log("got to selecthouses");
         // If no further limits have been entered, just make the finalGroup array equal to the areaGroup
         // array — we don't want to filter the houses further — then run updateDisplay().
-        if( builtTarget.value == "anyyearbuilt" && accessTarget == "anyaccessibility" ) {
+        if(capTarget.length == 4 && builtTarget.length == 4) {
             finalGroup = areaGroup;
             updateDisplay();
-        } else if ( builtTarget.value == "anyyearbuilt" ) {
-            // ONLY LIMIT BY ACCESS
-            for( let i = 0; i < areaGroup.length ; i++ ) {
-                if( areaGroup[i].accessible == accessTarget.value ) {
-                    finalGroup.push(areaGroup[i]);
-                }
-            }
-            updateDisplay();
-        } else if ( accessTarget == "anyaccessibility" ) {
-            // ONLY LIMIT BY BUILT
-            for( let i = 0; i < areaGroup.length ; i++ ) {
-                let range = (builtTarget.value).split("-");
-                let min = range[0];
-                let max = range[1];
-                if( areaGroup[i].built >= min && areaGroup[i].built <= max ) {
-                    finalGroup.push(areaGroup[i]);
-                }
-            }
-            updateDisplay();
         } else {
+            // Make sure the ##search term## is converted to lower case before comparison. We've kept the
+            // house names all lower case to keep things simple
+            //let lowerCaseSearchTerm = searchTerm.value.toLowerCase();
+            // For each house in categoryGroup, see if the ##search term## is contained inside the house name
+            // (if the indexOf() result doesn't return -1, it means it is) — if it is, then push the house
+            // onto the finalGroup array
+            //for(let i = 0; i < categoryGroup.length ; i++) {
+                //if(categoryGroup[i].name.indexOf(lowerCaseSearchTerm) !== -1) {
+                    //finalGroup.push(categoryGroup[i]);
+                //}
+            //}
+
+            // run updateDisplay() after this second round of filtering has been done
+            // TEMP FOR TEST
             finalGroup = areaGroup;
             updateDisplay();
         }
+
     }
 
 
@@ -199,6 +206,25 @@ function initialize() {
                         }
                         });
     }
+
+    // tests if a checkbox is checked
+    function testCheckbox(checkbox) {
+    //  let checkbox_val = checkbox.value;
+      if (checkbox.checked == true) {
+        console.log("Checkbox " + checkbox.value + " is checked!")
+      } else {
+        console.log("checkbox " + checkbox.value + " is not checked")
+      }
+    }
+    // this function gets the value from a checked box
+    function getCheckval(checkbox) {
+      //let checkbox_area = checkbox.name;
+      if (testCheckbox(checkbox)) {
+        console.log(checkbox.value + " " + checkbox.name)
+      }
+    }
+
+
 
     // Display a house inside the <main> element
     function showHouse(objectURL, house) {
