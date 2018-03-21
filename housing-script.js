@@ -128,25 +128,9 @@ function initialize() {
             finalGroup = areaGroup;
             updateDisplay();
         } else {
-            // Make sure the ##search term## is converted to lower case before comparison. We've kept the
-            // house names all lower case to keep things simple
-            //let lowerCaseSearchTerm = searchTerm.value.toLowerCase();
-            // For each house in categoryGroup, see if the ##search term## is contained inside the house name
-            // (if the indexOf() result doesn't return -1, it means it is) — if it is, then push the house
-            // onto the finalGroup array
-            //for(let i = 0; i < categoryGroup.length ; i++) {
-                //if(categoryGroup[i].name.indexOf(lowerCaseSearchTerm) !== -1) {
-                    //finalGroup.push(categoryGroup[i]);
-                //}
-            //}
-
-            // run updateDisplay() after this second round of filtering has been done
-            // TEMP FOR TEST
             finalGroup = areaGroup;
             updateDisplay();
         }
-
-
     }
 
 
