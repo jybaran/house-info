@@ -37,20 +37,8 @@ function initialize() {
             areaTarget.push(tempAreaTarget[i].value);
         }
     }
-    let tempCapTarget = document.getElementsByName('Cap');
-    let capTarget = [];
-    for (let i = 0; i < tempCapTarget.length; i++) {
-        if (tempCapTarget[i].checked) {
-            capTarget.push(tempCapTarget[i].value);
-        }
-    }
-    let tempBuiltTarget = document.getElementsByName('Built');
-    let builtTarget = [];
-    for (let i = 0; i < tempBuiltTarget.length; i++) {
-        if (tempBuiltTarget[i].checked) {
-            builtTarget.push(tempBuiltTarget[i].value);
-        }
-    }
+    let builtTarget = document.querySelector('#built');
+    let capTarget = document.querySelector('#capacity');
     let searchBtn = document.querySelector('button');
     let main = document.querySelector('main');
 
