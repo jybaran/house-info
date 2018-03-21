@@ -37,15 +37,16 @@ function initialize() {
             areaTarget.push(tempAreaTarget[i].value);
         }
     }
+    console.log(areaTarget);
     let builtTarget = document.querySelector('#built');
-    let capTarget = document.querySelector('#capacity');
+    let accessTarget = document.querySelector('#accessibility');
     let searchBtn = document.querySelector('button');
     let main = document.querySelector('main');
 
     // keep a record of what the last search terms entered were
     let lastAreaTarget;
-    let lastCapTarget;
-    let lastBuiltTarget;
+    let lastBuiltTarget = builtTarget.value;
+    let lastAccessTarget = accessTarget.value;
 
     // these contain the results of filtering by category, and search term
     // finalGroup will contain the houses that need to be displayed after
@@ -82,19 +83,19 @@ function initialize() {
         // if the area other limits are the same as they were the last time a
         // search was run, the results will be the same, so there is no point running
         // it again — just return out of the function
-        if( areaTarget == lastAreaTarget && capTarget == lastCapTarget && builtTarget == lastBuiltTarget ) {
+        if( areaTarget == lastAreaTarget && accessTarget.value == lastAccessTarget && builtTarget.value == lastBuiltTarget ) {
             //console.log("trapped in the if");
             return;
         } else {
-            // update the record of last category and search term
+            // update the record of last area and search targets
             lastAreaTarget = areaTarget;
-            lastCapTarget = capTarget;
-            lastBuiltTarget = builtTarget;
+            lastBuiltTarget = builtTarget.value;
+            lastAccessTarget = accessTarget.value;
 
             // In this case we want to select all houses, then filter them further,
             // so we just set areaGroup to the entire JSON object, then run selectHouses()
             if(areaTarget.length == 6) {
-                categoryGroup = houses;
+                areaGroup = houses;
                 selectHouses();
                 // If a specific area is chosen, we need to filter out the houses not in that
                 // area, then put the remaining houses inside areaGroup, before running
@@ -102,8 +103,8 @@ function initialize() {
             } else {
                 for( let j = 0; j < areaTarget.length; j++ ) {
                     for( let i = 0; i < houses.length ; i++) {
-                        // If a houses type property is the same as the chosen category, we want to
-                        // display it, so we push it onto the categoryGroup array
+                        // If a houses area property is the same as the chosen area, we want to
+                        // display it, so we push it onto the areaGroup array
                         if(houses[i].area == areaTarget[j]) {
                             areaGroup.push(houses[i]);
                         }
@@ -124,8 +125,27 @@ function initialize() {
         console.log("got to selecthouses");
         // If no further limits have been entered, just make the finalGroup array equal to the areaGroup
         // array — we don't want to filter the houses further — then run updateDisplay().
-        if(capTarget.length == 4 && builtTarget.length == 4) {
+        if( builtTarget.value == "anyyearbuilt" && accessTarget == "anyaccessibility" ) {
             finalGroup = areaGroup;
+            updateDisplay();
+        } else if ( builtTarget.value == "anyyearbuilt" ) {
+            // ONLY LIMIT BY ACCESS
+            for( let i = 0; i < areaGroup.length ; i++ ) {
+                if( areaGroup[i].accessible == accessTarget.value ) {
+                    finalGroup.push(areaGroup[i]);
+                }
+            }
+            updateDisplay();
+        } else if ( accessTarget == "anyaccessibility" ) {
+            // ONLY LIMIT BY BUILT
+            for( let i = 0; i < areaGroup.length ; i++ ) {
+                let range = (builtTarget.value).split("-");
+                let min = range[0];
+                let max = range[1];
+                if( areaGroup[i].built >= min && areaGroup[i].built <= max ) {
+                    finalGroup.push(areaGroup[i]);
+                }
+            }
             updateDisplay();
         } else {
             finalGroup = areaGroup;

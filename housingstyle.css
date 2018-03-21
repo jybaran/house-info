@@ -78,7 +78,7 @@ td {
 
 /* Attempted scrollbar */
 #scroll {
-    overflow: scroll;
+    overflow: auto;
 }
 
 /* Style the submit button */
