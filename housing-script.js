@@ -8,18 +8,18 @@ fetch('houses.json').then(function(response){
                           if(response.ok){
                           response.json().then(function(json){
                                                houses = json;
-
+                                               
                                                houses.sort( function( a, b ) {
                                                            a = a.name.toLowerCase();
                                                            b = b.name.toLowerCase();
-
+                                                           
                                                            return a < b ? -1 : a > b ? 1 : 0;
                                                            });
                                                houses.sort();
-
+                                               
                                                initialize();
                                                });
-
+                          
                           } else {
                           console.log('Network request for houses.json failed with response ' + response.status + ': ' + response.statusText);
                           }
@@ -37,48 +37,49 @@ function initialize() {
             areaTarget.push(tempAreaTarget[i].value);
         }
     }
+    console.log(areaTarget);
     let builtTarget = document.querySelector('#built');
     let accessTarget = document.querySelector('#accessibility');
     let searchBtn = document.querySelector('button');
     let main = document.querySelector('main');
-
+    
     // keep a record of what the last search terms entered were
     let lastAreaTarget;
     let lastBuiltTarget = builtTarget.value;
     let lastAccessTarget = accessTarget.value;
-
+    
     // these contain the results of filtering by category, and search term
     // finalGroup will contain the houses that need to be displayed after
     // the searching has been done. Each will be an array containing objects.
     // Each object will represent a house.
     let areaGroup;
     let finalGroup;
-
+    
     // To start with, set finalGroup to equal the entire houses database
     // then run updateDisplay(), so ALL houses are displayed initially.
     finalGroup = houses;
     updateDisplay();
-
+    
     // Set both to equal an empty array, in time for searches to be run
     areaGroup = [];
     finalGroup = [];
-
+    
     // when the search button is clicked, invoke selectArea() to start
     // a search running to select the category of houses we want to display
     searchBtn.onclick = selectArea;
-
-
+    
+    
     // JENNY: lots of this is bad
     function selectArea(e) {
         console.log("got to select area");
         // Use preventDefault() to stop the form submitting — that would ruin
         // the experience
         e.preventDefault();
-
+        
         // Set these back to empty arrays, to clear out the previous search
         areaGroup = [];
         finalGroup = [];
-
+        
         // if the area other limits are the same as they were the last time a
         // search was run, the results will be the same, so there is no point running
         // it again — just return out of the function
@@ -86,15 +87,15 @@ function initialize() {
             //console.log("trapped in the if");
             return;
         } else {
-            // update the record of last category and search term
+            // update the record of last area and search targets
             lastAreaTarget = areaTarget;
             lastBuiltTarget = builtTarget.value;
             lastAccessTarget = accessTarget.value;
-
+            
             // In this case we want to select all houses, then filter them further,
             // so we just set areaGroup to the entire JSON object, then run selectHouses()
             if(areaTarget.length == 6) {
-                categoryGroup = houses;
+                areaGroup = houses;
                 selectHouses();
                 // If a specific area is chosen, we need to filter out the houses not in that
                 // area, then put the remaining houses inside areaGroup, before running
@@ -102,8 +103,8 @@ function initialize() {
             } else {
                 for( let j = 0; j < areaTarget.length; j++ ) {
                     for( let i = 0; i < houses.length ; i++) {
-                        // If a houses type property is the same as the chosen category, we want to
-                        // display it, so we push it onto the categoryGroup array
+                        // If a houses area property is the same as the chosen area, we want to
+                        // display it, so we push it onto the areaGroup array
                         if(houses[i].area == areaTarget[j]) {
                             areaGroup.push(houses[i]);
                         }
@@ -116,7 +117,7 @@ function initialize() {
             }
         }
     }
-
+    
     // JENNY: this needs a lot of fixing, sorry
     // selectHouses() Takes the group of houses selected by selectCategory(), and further
     // filters them by the other checkboxes (if any have been entered)
@@ -131,7 +132,7 @@ function initialize() {
             // ONLY LIMIT BY ACCESS
             for( let i = 0; i < areaGroup.length ; i++ ) {
                 if( areaGroup[i].accessible == accessTarget.value ) {
-                    finalGroup.push(categoryGroup[i]);
+                    finalGroup.push(areaGroup[i]);
                 }
             }
             updateDisplay();
@@ -142,7 +143,7 @@ function initialize() {
                 let min = range[0];
                 let max = range[1];
                 if( areaGroup[i].built >= min && areaGroup[i].built <= max ) {
-                    finalGroup.push(categoryGroup[i]);
+                    finalGroup.push(areaGroup[i]);
                 }
             }
             updateDisplay();
@@ -153,16 +154,14 @@ function initialize() {
                 let min = range[0];
                 let max = range[1];
                 if( areaGroup[i].built >= min && areaGroup[i].built <= max && areaGroup[i].accessible == accessTarget.value ) {
-                    finalGroup.push(categoryGroup[i]);
+                    finalGroup.push(areaGroup[i]);
                 }
             }
             updateDisplay();
         }
-
-
     }
-
-
+    
+    
     // start the process of updating the display with the new set of houses
     function updateDisplay() {
         console.log("got to updatedisplay");
@@ -170,7 +169,7 @@ function initialize() {
         while (main.firstChild) {
             main.removeChild(main.firstChild);
         }
-
+        
         // if no houses match the search term, display a "No results to display" message
         if(finalGroup.length === 0) {
             let para = document.createElement('p');
@@ -183,7 +182,7 @@ function initialize() {
             }
         }
     }
-
+    
     // fetchBlob uses fetch to retrieve the image for that house, and then sends the
     // resulting image display URL and house object on to showHouse() to finally
     // display it
@@ -208,7 +207,7 @@ function initialize() {
                         }
                         });
     }
-
+    
     // Display a house inside the <main> element
     function showHouse(objectURL, house) {
         console.log("got to showhouse");
@@ -226,24 +225,24 @@ function initialize() {
         let bathroom = document.createElement('p');
         let access = document.createElement('p');
         let elevator = document.createElement('p');
-
+        
         // JENNY: think we don't need this
         // give the <section> a classname equal to the house "type" property so it will display the correct icon
         //section.setAttribute('class', house.type);
-
+        
         // Give the <h2> textContent equal to the house "name" property, but with the first character
         // replaced with the uppercase version of the first character
         heading.textContent = house.name.replace(house.name.charAt(0), house.name.charAt(0).toUpperCase());
-
+        
         // Give the <h3> textContent equal to the house "area" property, but with the first character
         // replaced with the uppercase version of the first character
         subhead.textContent = house.area.replace(house.area.charAt(0), house.area.charAt(0).toUpperCase());
-
+        
         // Set the src of the <img> element to the ObjectURL, and the alt to the house "name" property
         image.src = objectURL;
         image.alt = house.name;
         image.width = "367";
-
+        
         // Give the <p>s textContent equal to the other house info
         built.textContent = "Built: " + house.built;
         reno.textContent = "Renovated: " + house.renovated;
@@ -254,7 +253,7 @@ function initialize() {
         bathroom.textContent = "Number sharing a bathroom: " + house.bathroom;
         access.textContent = "Accessible: " + house.accessible;
         elevator.textContent = "Elevator: " + house.elevator;
-
+        
         // append the elements to the DOM as appropriate, to add the house to the UI
         main.appendChild(section);
         section.appendChild(heading);
