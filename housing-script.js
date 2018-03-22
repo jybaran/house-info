@@ -8,7 +8,6 @@ fetch('houses.json').then(function(response){
                           if(response.ok){
                           response.json().then(function(json){
                                                houses = json;
-
                                                houses.sort( function( a, b ) {
                                                            a = a.name.toLowerCase();
                                                            b = b.name.toLowerCase();
@@ -16,7 +15,6 @@ fetch('houses.json').then(function(response){
                                                            return a < b ? -1 : a > b ? 1 : 0;
                                                            });
                                                houses.sort();
-
                                                initialize();
                                                });
 
@@ -38,7 +36,12 @@ function initialize() {
     let main = document.querySelector('main');
 
     // keep a record of what the last search terms entered were
-    let lastAreaTarget;
+    let lastAreaTarget = [];
+    for (let i = 0; i < tempAreaTarget.length; i++) {
+        if (tempAreaTarget[i].checked) {
+            lastAreaTarget.push(tempAreaTarget[i].value);
+        }
+    }
     let lastBuiltTarget = builtTarget.value;
     let lastAccessTarget = accessTarget.value;
 
