@@ -26,7 +26,7 @@ fetch('houses.json').then(function(response){
 
 // Sets up the logic, declares necessary variables, contains functions
 function initialize() {
-    console.log("got to initialize");
+    //console.log("got to initialize");
     // grab the UI elements that we need to manipulate
     let tempAreaTarget = document.getElementsByName('Area');
     let areaTarget = [];
@@ -68,14 +68,14 @@ function initialize() {
 
     // JENNY: lots of this is bad
     function selectArea(e) {
-        console.log("got to select area");
+        //console.log("got to select area");
         areaTarget = [];
         for (let i = 0; i < tempAreaTarget.length; i++) {
             if (tempAreaTarget[i].checked) {
                 areaTarget.push(tempAreaTarget[i].value);
             }
         }
-        console.log(areaTarget);
+        //console.log(areaTarget);
         // Use preventDefault() to stop the form submitting — that would ruin
         // the experience
         e.preventDefault();
@@ -114,29 +114,28 @@ function initialize() {
                         }
                     }
                 }
-                console.log("areagroup created");
-                console.log(areaGroup);
+                //console.log("areagroup created");
+                //console.log(areaGroup);
                 // Run selectHouses() after the filtering has been done
                 selectHouses();
             }
         }
     }
 
-    // JENNY: this needs a lot of fixing, sorry
-    // selectHouses() Takes the group of houses selected by selectCategory(), and further
-    // filters them by the other checkboxes (if any have been entered)
+    // selectHouses() Takes the group of houses selected by selectArea(), and further
+    // filters them by the other limits (if any have been entered)
     function selectHouses() {
         console.log("got to selecthouses");
         // If no further limits have been entered, just make the finalGroup array equal to the areaGroup
         // array — we don't want to filter the houses further — then run updateDisplay().
         if ( builtTarget.value == "anyyearbuilt" && accessTarget.value == "anyaccessibility" ) {
-            console.log("no further filter");
+            //console.log("no further filter");
             finalGroup = areaGroup;
-            console.log("final group", finalGroup);
+            //console.log("final group", finalGroup);
             updateDisplay();
         } else if ( builtTarget.value == "anyyearbuilt" ) {
             // ONLY LIMIT BY ACCESS
-            console.log("access filter");
+            //console.log("access filter");
             for( let i = 0; i < areaGroup.length ; i++ ) {
                 if( areaGroup[i].accessible == accessTarget.value ) {
                     finalGroup.push(areaGroup[i]);
@@ -145,7 +144,7 @@ function initialize() {
             updateDisplay();
         } else if ( accessTarget.value == "anyaccessibility" ) {
             // ONLY LIMIT BY BUILT
-            console.log("built filter");
+            //console.log("built filter");
             for( let i = 0; i < areaGroup.length ; i++ ) {
                 let range = (builtTarget.value).split("-");
                 let min = range[0];
@@ -157,7 +156,7 @@ function initialize() {
             updateDisplay();
         } else {
             // LIMIT BY BOTH
-            console.log("both filter");
+            //console.log("both filter");
             for( let i = 0; i < areaGroup.length ; i++ ) {
                 let range = (builtTarget.value).split("-");
                 let min = range[0];
@@ -174,7 +173,7 @@ function initialize() {
 
     // start the process of updating the display with the new set of houses
     function updateDisplay() {
-        console.log("got to updatedisplay");
+        //console.log("got to updatedisplay");
         // remove the previous contents of the <main> element
         while (main.firstChild) {
             main.removeChild(main.firstChild);
@@ -182,13 +181,13 @@ function initialize() {
 
         // if no houses match the search term, display a "No results to display" message
         if(finalGroup.length == 0) {
-            console.log("empty finalgroup");
+            //console.log("empty finalgroup");
             let para = document.createElement('p');
             para.textContent = 'No results to display!';
             main.appendChild(para);
             // for each house we want to display, pass its house object to fetchBlob()
         } else {
-            console.log("made it to else in updatedisplay");
+            //console.log("made it to else in updatedisplay");
             for(let i = 0; i < finalGroup.length; i++) {
                 fetchBlob(finalGroup[i]);
             }
@@ -199,7 +198,7 @@ function initialize() {
     // resulting image display URL and house object on to showHouse() to finally
     // display it
     function fetchBlob(house) {
-        console.log("got to fetchblob");
+        //console.log("got to fetchblob");
         // grab url from house.image property
         // TEMP URL
         let url = "images/" + house.image;
@@ -220,28 +219,9 @@ function initialize() {
                         });
     }
 
-    // tests if a checkbox is checked
-    function testCheckbox(checkbox) {
-    //  let checkbox_val = checkbox.value;
-      if (checkbox.checked == true) {
-        console.log("Checkbox " + checkbox.value + " is checked!")
-      } else {
-        console.log("checkbox " + checkbox.value + " is not checked")
-      }
-    }
-    // this function gets the value from a checked box
-    function getCheckval(checkbox) {
-      //let checkbox_area = checkbox.name;
-      if (testCheckbox(checkbox)) {
-        console.log(checkbox.value + " " + checkbox.name)
-      }
-    }
-
-
-
     // Display a house inside the <main> element
     function showHouse(objectURL, house) {
-        console.log("got to showhouse");
+        //console.log("got to showhouse");
         // create <section>, <h2>, <p>, and <img> elements
         let section = document.createElement('section');
         let heading = document.createElement('h2');
@@ -257,16 +237,12 @@ function initialize() {
         let access = document.createElement('p');
         let elevator = document.createElement('p');
 
-        // JENNY: think we don't need this
-        // give the <section> a classname equal to the house "type" property so it will display the correct icon
-        //section.setAttribute('class', house.type);
-
         // Give the <h2> textContent equal to the house "name" property, but with the first character
         // replaced with the uppercase version of the first character
         heading.textContent = house.name.replace(house.name.charAt(0), house.name.charAt(0).toUpperCase());
 
-        // Give the <h3> textContent equal to the house "area" property, but with the first character
-        // replaced with the uppercase version of the first character
+        // Give the <h3> textContent equal to the house "area" property, but with the first
+        // character replaced with the uppercase version of the first character
         subhead.textContent = house.area.replace(house.area.charAt(0), house.area.charAt(0).toUpperCase());
 
         // Set the src of the <img> element to the ObjectURL, and the alt to the house "name" property
