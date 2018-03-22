@@ -1,5 +1,4 @@
 /* Import Google fonts */
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Serif");
 @import url('https://fonts.googleapis.com/css?family=Overlock+SC');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Karla');
@@ -46,21 +45,6 @@ label {
     margin-bottom: 10px;
 }
 
-/* Style the table in the webpage for formatting */
-table {
-
-}
-
-.whole {
-    max-height: 200px;
-}
-
-/*
-td {
-    display: flex;
-}
-*/
-
 /* The left column of the table with the navigation bar */
 #categories {
     padding: 10px;
@@ -72,13 +56,6 @@ td {
 #display {
     width: 1000px;
     padding-left: 100px;
-    /*overflow-y: scroll;*/
-    max-height: 150px;
-}
-
-/* Attempted scrollbar */
-#scroll {
-    overflow: auto;
 }
 
 /* Style the submit button */
@@ -94,6 +71,7 @@ button {
     padding: 8px 32px;
 }
 
+/* Submit button turns a darker colour when clicked */
 button:active {
     background-color: #384f75;
 }
