@@ -32,32 +32,15 @@ function initialize() {
     // grab the UI elements that we need to manipulate
     let tempAreaTarget = document.getElementsByName('Area');
     let areaTarget = [];
-    for (let i = 0; i < tempAreaTarget.length; i++) {
-        if (tempAreaTarget[i].checked) {
-            areaTarget.push(tempAreaTarget[i].value);
-        }
-    }
-    let tempCapTarget = document.getElementsByName('Cap');
-    let capTarget = [];
-    for (let i = 0; i < tempCapTarget.length; i++) {
-        if (tempCapTarget[i].checked) {
-            capTarget.push(tempCapTarget[i].value);
-        }
-    }
-    let tempBuiltTarget = document.getElementsByName('Built');
-    let builtTarget = [];
-    for (let i = 0; i < tempBuiltTarget.length; i++) {
-        if (tempBuiltTarget[i].checked) {
-            builtTarget.push(tempBuiltTarget[i].value);
-        }
-    }
+    let builtTarget = document.querySelector('#built');
+    let accessTarget = document.querySelector('#accessibility');
     let searchBtn = document.querySelector('button');
     let main = document.querySelector('main');
 
     // keep a record of what the last search terms entered were
     let lastAreaTarget;
-    let lastCapTarget;
-    let lastBuiltTarget;
+    let lastBuiltTarget = builtTarget.value;
+    let lastAccessTarget = accessTarget.value;
 
     // these contain the results of filtering by category, and search term
     // finalGroup will contain the houses that need to be displayed after
@@ -83,6 +66,13 @@ function initialize() {
     // JENNY: lots of this is bad
     function selectArea(e) {
         console.log("got to select area");
+        areaTarget = [];
+        for (let i = 0; i < tempAreaTarget.length; i++) {
+            if (tempAreaTarget[i].checked) {
+                areaTarget.push(tempAreaTarget[i].value);
+            }
+        }
+        console.log(areaTarget);
         // Use preventDefault() to stop the form submitting — that would ruin
         // the experience
         e.preventDefault();
@@ -94,19 +84,19 @@ function initialize() {
         // if the area other limits are the same as they were the last time a
         // search was run, the results will be the same, so there is no point running
         // it again — just return out of the function
-        if( areaTarget == lastAreaTarget && capTarget == lastCapTarget && builtTarget == lastBuiltTarget ) {
-            //console.log("trapped in the if");
+        if( areaTarget == lastAreaTarget && accessTarget.value == lastAccessTarget && builtTarget.value == lastBuiltTarget ) {
+            //console.log("trapped in the case where no change");
             return;
         } else {
-            // update the record of last category and search term
+            // update the record of last area and search target
             lastAreaTarget = areaTarget;
-            lastCapTarget = capTarget;
-            lastBuiltTarget = builtTarget;
+            lastBuiltTarget = builtTarget.value;
+            lastAccessTarget = accessTarget.value;
 
             // In this case we want to select all houses, then filter them further,
             // so we just set areaGroup to the entire JSON object, then run selectHouses()
             if(areaTarget.length == 6) {
-                categoryGroup = houses;
+                areaGroup = houses;
                 selectHouses();
                 // If a specific area is chosen, we need to filter out the houses not in that
                 // area, then put the remaining houses inside areaGroup, before running
@@ -114,8 +104,8 @@ function initialize() {
             } else {
                 for( let j = 0; j < areaTarget.length; j++ ) {
                     for( let i = 0; i < houses.length ; i++) {
-                        // If a houses type property is the same as the chosen category, we want to
-                        // display it, so we push it onto the categoryGroup array
+                        // If a houses area property is the same as the chosen area, we want to
+                        // display it, so we push it onto the areaGroup array
                         if(houses[i].area == areaTarget[j]) {
                             areaGroup.push(houses[i]);
                         }
@@ -136,25 +126,43 @@ function initialize() {
         console.log("got to selecthouses");
         // If no further limits have been entered, just make the finalGroup array equal to the areaGroup
         // array — we don't want to filter the houses further — then run updateDisplay().
-        if(capTarget.length == 4 && builtTarget.length == 4) {
+        if ( builtTarget.value == "anyyearbuilt" && accessTarget.value == "anyaccessibility" ) {
+            console.log("no further filter");
             finalGroup = areaGroup;
+            console.log("final group", finalGroup);
+            updateDisplay();
+        } else if ( builtTarget.value == "anyyearbuilt" ) {
+            // ONLY LIMIT BY ACCESS
+            console.log("access filter");
+            for( let i = 0; i < areaGroup.length ; i++ ) {
+                if( areaGroup[i].accessible == accessTarget.value ) {
+                    finalGroup.push(areaGroup[i]);
+                }
+            }
+            updateDisplay();
+        } else if ( accessTarget.value == "anyaccessibility" ) {
+            // ONLY LIMIT BY BUILT
+            console.log("built filter");
+            for( let i = 0; i < areaGroup.length ; i++ ) {
+                let range = (builtTarget.value).split("-");
+                let min = range[0];
+                let max = range[1];
+                if( areaGroup[i].built >= min && areaGroup[i].built <= max ) {
+                    finalGroup.push(areaGroup[i]);
+                }
+            }
             updateDisplay();
         } else {
-            // Make sure the ##search term## is converted to lower case before comparison. We've kept the
-            // house names all lower case to keep things simple
-            //let lowerCaseSearchTerm = searchTerm.value.toLowerCase();
-            // For each house in categoryGroup, see if the ##search term## is contained inside the house name
-            // (if the indexOf() result doesn't return -1, it means it is) — if it is, then push the house
-            // onto the finalGroup array
-            //for(let i = 0; i < categoryGroup.length ; i++) {
-                //if(categoryGroup[i].name.indexOf(lowerCaseSearchTerm) !== -1) {
-                    //finalGroup.push(categoryGroup[i]);
-                //}
-            //}
-
-            // run updateDisplay() after this second round of filtering has been done
-            // TEMP FOR TEST
-            finalGroup = areaGroup;
+            // LIMIT BY BOTH
+            console.log("both filter");
+            for( let i = 0; i < areaGroup.length ; i++ ) {
+                let range = (builtTarget.value).split("-");
+                let min = range[0];
+                let max = range[1];
+                if( areaGroup[i].built >= min && areaGroup[i].built <= max && areaGroup[i].accessible == accessTarget.value ) {
+                    finalGroup.push(areaGroup[i]);
+                }
+            }
             updateDisplay();
         }
 
@@ -170,12 +178,14 @@ function initialize() {
         }
 
         // if no houses match the search term, display a "No results to display" message
-        if(finalGroup.length === 0) {
+        if(finalGroup.length == 0) {
+            console.log("empty finalgroup");
             let para = document.createElement('p');
             para.textContent = 'No results to display!';
             main.appendChild(para);
             // for each house we want to display, pass its house object to fetchBlob()
         } else {
+            console.log("made it to else in updatedisplay");
             for(let i = 0; i < finalGroup.length; i++) {
                 fetchBlob(finalGroup[i]);
             }
